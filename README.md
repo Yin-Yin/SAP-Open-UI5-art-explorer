@@ -38,21 +38,21 @@ Run `grunt build` to build a deployable version of your app to `/dist`.
 
 
 		
-##User stories: 
+## User stories: 
 Bernard the art lover wants to explore some art. 
 User Story 1: see random paintings: 
 	Bernard wants to open the app and immediately see some random paintings. He wants to change to another random image. 
 User Story 2: change the painting style, that Bernanrd can see. 
 	Bernard wants to select the painting style in which he sees random paintings. He wants to select it from a list of different styles 
 
-###Lessons Learned
+## Lessons Learned
 - It gets difficult if you want to do something else than what is intended with the FIORI guidelines. You should really stay within the borders of the framework.
 
 ## Data model
 
 
 
-##ToDos
+## ToDos
 
 
  - add button to load more pictures in the pool
@@ -90,7 +90,7 @@ User Story 2: change the painting style, that Bernanrd can see.
  
  - crawl the API to be independent of API (also imgs)
 
- may be:
+### may be:
  -add favourite
  -have small pictures enlarged, like this: maximum width is 100%, but minimum height is 100%
  -is it possible to change the url #painting-style - for whichever category is selected?
