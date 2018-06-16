@@ -1,0 +1,98 @@
+<mvc:View id="mainview" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		  controllerName="sap.ui.demo.todo.controller.App"
+		  displayBlock="true">
+	<Shell>
+		<App>
+			<Page title="{i18n>TITLE}" backgroundDesign="Solid">
+				<customHeader>
+					<OverflowToolbar id="headerBar">
+
+						<Button text="{i18n>BUTTON_CHANGE_PICTURE}" id="changePic" type="Emphasized"
+								tooltip="{i18n>BUTTON_CHANGE_PICTURE_TOOLTIP}"
+								press="changeToRandomPicture" enabled="false"/>
+
+						<ComboBox id="comboBoxPaintingStyle"
+								  change="changePaintingStyleComboBox"
+								  enabled="false">
+						</ComboBox>
+
+						<CheckBox id="featuredCheckBox" text="{i18n>CHECKBOX_FEATURED}" enabled="getIsFeatured"
+								  selected="true"
+								  select="changePaintingStyleComboBox"/>
+
+
+						<ToolbarSpacer/>
+
+
+						<Title text="{i18n>TITLE}" textAlign="center" level="H1"/>
+
+
+						<ToolbarSpacer/>
+						<Button id="showIntorPageButton" enabled="false" icon="sap-icon://sys-help"
+								press="showIntroPage" text="Intro"/>
+						<Button id="imgDownloadButton" press="downloadImg" icon="sap-icon://download"
+								tooltip="download image" enabled="false" text="{i18n>BUTTON_DOWNLOAD}"/>
+						<Button id="showPoolButton" text="{i18n>BUTTON_OPEN_DIALOG_IMGOVERVIEW}"
+								press="openImgOverviewDialog" enabled="false"/>
+						<Button id="showHistoryButton" text="{i18n>BUTTON_OPEN_DIALOG_HISTORY}"
+								press="openHistoryDialog" enabled="false"/>
+
+						<Button id="loadMoreButton" text="Load More"
+								press="changePaintingStyleComboBox" enabled="true"/>
+
+					</OverflowToolbar>
+				</customHeader>
+
+
+				<content>
+					<FlexBox
+							id="mainFlexBoxIntro"
+							width="100%"
+							direction='Column'
+							alignItems="Center"
+							justifyContent="Center"
+							visible="true">
+						<items>
+							<Title level="H2" text="Welcome to Art Explorer - a demo SAP UI5 App - discover new artworks and paining-styles"/>
+							<Text text="This App is made to explore and discover new paintings and painting styles. It shows pictures from Wikiart. The emphasis lies on discovering new art. \n There are two random buttons. At first you can select a painting style from below or may be discover something new by clicking the 'random painting style button'. \n You can see which paintings you have already watched in the history overview. \nThe App shows random images from the 'pool'. Open the pool to see from which selection the App fetches its random pictures. You can also directly select an artwork here.to view it. \n Toggle the 'featured' box to view only artwork from the selected painting style that are worth noticing. "/>
+							<Button text="Start with random style" press="pressStartButtonRandom" type="Emphasized"/>
+							<FlexBox renderType="Div" wrap="Wrap" id="buttonBox" class="buttonBox"/>
+
+						</items>
+					</FlexBox>
+
+					<FlexBox
+							id="mainFlexBox"
+							width="100%"
+							alignItems="Start"
+							justifyContent="Center"
+							visible="false">
+						<items>
+							<Image class="main-image" id="mainPicture" densityAware="false"/>
+						</items>
+					</FlexBox>
+					<BusyDialog id="BusyDialog" />
+				</content>
+				<footer>
+					<Toolbar id="footerToolbar">
+						<FlexBox
+								id="imgInformation"
+								width="100%"
+								alignItems="Start"
+								justifyContent="Center"
+								visible="false">
+							<items>
+								<Label text="{i18n>PAINTING_ARTIST}" class="footer-label"/>
+								<Text renderWhitespace="true" id="painting_artist" class="footer-text"/>
+								<Label text="{i18n>PAINTING_TITLE}" class="footer-label"/>
+								<Text id="painting_title" class="footer-text"/>
+								<Label text="{i18n>PAINTING_YEAR}" class="footer-label"/>
+								<Text id="painting_year" class="footer-text"/>
+							</items>
+						</FlexBox>
+					</Toolbar>
+				</footer>
+			</Page>
+		</App>
+	</Shell>
+</mvc:View>

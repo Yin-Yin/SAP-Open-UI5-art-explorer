@@ -1,0 +1,714 @@
+[
+  {
+	"name": "",
+	"url": "Medieval Art"
+  },
+  {
+	"name": "Early Christian",
+	"url": "early-christian"
+  },
+  {
+	"name": "Mozarabic",
+	"url": "mozarabic"
+  },
+  {
+	"name": "Byzantine",
+	"url": "byzantine?select=featured"
+  },
+  {
+	"name": "Romanesque",
+	"url": "romanesque"
+  },
+  {
+	"name": "Mosan art",
+	"url": "mosan-art"
+  },
+  {
+	"name": "Gothic",
+	"url": "gothic"
+  },
+  {
+	"name": "International Gothic",
+	"url": "international-gothic?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Renaissance Art"
+  },
+  {
+	"name": "Proto Renaissance",
+	"url": "proto-renaissance?select=featured"
+  },
+  {
+	"name": "Early Renaissance",
+	"url": "early-renaissance?select=featured"
+  },
+  {
+	"name": "High Renaissance",
+	"url": "high-renaissance?select=featured"
+  },
+  {
+	"name": "Mannerism (Late Renaissance)",
+	"url": "mannerism-late-renaissance?select=featured"
+  },
+  {
+	"name": "Northern Renaissance",
+	"url": "northern-renaissance?select=featured"
+  },
+  {
+	"name": "Renaissance",
+	"url": "renaissance"
+  },
+  {
+	"name": "",
+	"url": "Post Renaissance Art"
+  },
+  {
+	"name": "Baroque",
+	"url": "baroque?select=featured"
+  },
+  {
+	"name": "Tenebrism",
+	"url": "tenebrism?select=featured"
+  },
+  {
+	"name": "Rococo",
+	"url": "rococo?select=featured"
+  },
+  {
+	"name": "Classicism",
+	"url": "classicism?select=featured"
+  },
+  {
+	"name": "Neoclassicism",
+	"url": "neoclassicism?select=featured"
+  },
+  {
+	"name": "Academicism",
+	"url": "academicism?select=featured"
+  },
+  {
+	"name": "Romanticism",
+	"url": "romanticism?select=featured"
+  },
+  {
+	"name": "Orientalism",
+	"url": "orientalism?select=featured"
+  },
+  {
+	"name": "Costumbrismo",
+	"url": "costumbrismo"
+  },
+  {
+	"name": "Biedermeier",
+	"url": "biedermeier?select=featured"
+  },
+  {
+	"name": "Neo-Rococo",
+	"url": "neo-rococo"
+  },
+  {
+	"name": "Luminism",
+	"url": "luminism?select=featured"
+  },
+  {
+	"name": "Realism",
+	"url": "realism?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Modern Art"
+  },
+  {
+	"name": "Naturalism",
+	"url": "naturalism?select=featured"
+  },
+  {
+	"name": "Naïve Art (Primitivism)",
+	"url": "na-ve-art-primitivism?select=featured"
+  },
+  {
+	"name": "Action painting",
+	"url": "action-painting"
+  },
+  {
+	"name": "Symbolism",
+	"url": "symbolism?select=featured"
+  },
+  {
+	"name": "Tonalism",
+	"url": "tonalism?select=featured"
+  },
+  {
+	"name": "Impressionism",
+	"url": "impressionism?select=featured"
+  },
+  {
+	"name": "Pointillism",
+	"url": "pointillism?select=featured"
+  },
+  {
+	"name": "Divisionism",
+	"url": "divisionism?select=featured"
+  },
+  {
+	"name": "Japonism",
+	"url": "japonism?select=featured"
+  },
+  {
+	"name": "Verism",
+	"url": "verism"
+  },
+  {
+	"name": "Post-Impressionism",
+	"url": "post-impressionism?select=featured"
+  },
+  {
+	"name": "Cloisonnism",
+	"url": "cloisonnism?select=featured"
+  },
+  {
+	"name": "Synthetism",
+	"url": "synthetism"
+  },
+  {
+	"name": "Intimism",
+	"url": "intimism"
+  },
+  {
+	"name": "Fauvism",
+	"url": "fauvism?select=featured"
+  },
+  {
+	"name": "Art Nouveau (Modern)",
+	"url": "art-nouveau-modern?select=featured"
+  },
+  {
+	"name": "Pictorialism",
+	"url": "pictorialism?select=featured"
+  },
+  {
+	"name": "Expressionism",
+	"url": "expressionism?select=featured"
+  },
+  {
+	"name": "Kitsch",
+	"url": "kitsch?select=featured"
+  },
+  {
+	"name": "Neo-Romanticism",
+	"url": "neo-romanticism?select=featured"
+  },
+  {
+	"name": "Cubism",
+	"url": "cubism?select=featured"
+  },
+  {
+	"name": "Analytical Cubism",
+	"url": "analytical-cubism"
+  },
+  {
+	"name": "Synthetic Cubism",
+	"url": "synthetic-cubism?select=featured"
+  },
+  {
+	"name": "Orphism",
+	"url": "orphism?select=featured"
+  },
+  {
+	"name": "Tubism",
+	"url": "tubism"
+  },
+  {
+	"name": "Cubo-Expressionism",
+	"url": "cubo-expressionism"
+  },
+  {
+	"name": "Abstract Art",
+	"url": "abstract-art?select=featured"
+  },
+  {
+	"name": "Futurism",
+	"url": "futurism?select=featured"
+  },
+  {
+	"name": "Cubo-Futurism",
+	"url": "cubo-futurism?select=featured"
+  },
+  {
+	"name": "Rayonism",
+	"url": "rayonism"
+  },
+  {
+	"name": "Synchromism",
+	"url": "synchromism"
+  },
+  {
+	"name": "Dada",
+	"url": "dada?select=featured"
+  },
+  {
+	"name": "Suprematism",
+	"url": "suprematism?select=featured"
+  },
+  {
+	"name": "Neo-Byzantine",
+	"url": "neo-byzantine"
+  },
+  {
+	"name": "Constructivism",
+	"url": "constructivism?select=featured"
+  },
+  {
+	"name": "Spectralism",
+	"url": "spectralism"
+  },
+  {
+	"name": "Modernismo",
+	"url": "modernismo"
+  },
+  {
+	"name": "Neo-Suprematism",
+	"url": "neo-suprematism"
+  },
+  {
+	"name": "Analytical&nbsp;Realism",
+	"url": "analytical-realism"
+  },
+  {
+	"name": "Neoplasticism",
+	"url": "neoplasticism?select=featured"
+  },
+  {
+	"name": "Concretism",
+	"url": "concretism?select=featured"
+  },
+  {
+	"name": "Perceptism ",
+	"url": "perceptism"
+  },
+  {
+	"name": "New Realism",
+	"url": "new-realism?select=featured"
+  },
+  {
+	"name": "American Realism",
+	"url": "american-realism?select=featured"
+  },
+  {
+	"name": "Social Realism",
+	"url": "social-realism?select=featured"
+  },
+  {
+	"name": "Surrealism",
+	"url": "surrealism?select=featured"
+  },
+  {
+	"name": "Automatic Painting",
+	"url": "automatic-painting"
+  },
+  {
+	"name": "Metaphysical art",
+	"url": "metaphysical-art?select=featured"
+  },
+  {
+	"name": "Magic Realism",
+	"url": "magic-realism?select=featured"
+  },
+  {
+	"name": "Fantastic Realism",
+	"url": "fantastic-realism?select=featured"
+  },
+  {
+	"name": "Neo-baroque",
+	"url": "neo-baroque?select=featured"
+  },
+  {
+	"name": "Art Deco",
+	"url": "art-deco?select=featured"
+  },
+  {
+	"name": "Purism",
+	"url": "purism?select=featured"
+  },
+  {
+	"name": "Precisionism",
+	"url": "precisionism?select=featured"
+  },
+  {
+	"name": "Regionalism",
+	"url": "regionalism?select=featured"
+  },
+  {
+	"name": "Socialist Realism",
+	"url": "socialist-realism?select=featured"
+  },
+  {
+	"name": "Muralism",
+	"url": "muralism?select=featured"
+  },
+  {
+	"name": "Cartographic Art",
+	"url": "cartographic-art"
+  },
+  {
+	"name": "Existential Art",
+	"url": "existential-art"
+  },
+  {
+	"name": "Lettrism",
+	"url": "lettrism"
+  },
+  {
+	"name": "Mechanistic Cubism",
+	"url": "mechanistic-cubism"
+  },
+  {
+	"name": "Miserablism",
+	"url": "miserablism"
+  },
+  {
+	"name": "Abstract Expressionism",
+	"url": "abstract-expressionism?select=featured"
+  },
+  {
+	"name": "Color Field Painting",
+	"url": "color-field-painting?select=featured"
+  },
+  {
+	"name": "Hard Edge Painting",
+	"url": "hard-edge-painting?select=featured"
+  },
+  {
+	"name": "Lyrical Abstraction",
+	"url": "lyrical-abstraction?select=featured"
+  },
+  {
+	"name": "Indian Space painting",
+	"url": "indian-space-painting"
+  },
+  {
+	"name": "Street Photography",
+	"url": "street-photography"
+  },
+  {
+	"name": "Figurative Expressionism",
+	"url": "figurative-expressionism?select=featured"
+  },
+  {
+	"name": "Art Informel",
+	"url": "art-informel?select=featured"
+  },
+  {
+	"name": "Tachisme",
+	"url": "tachisme?select=featured"
+  },
+  {
+	"name": "Neo-Concretism",
+	"url": "neo-concretism"
+  },
+  {
+	"name": "Performance Art",
+	"url": "performance-art"
+  },
+  {
+	"name": "Transautomatism",
+	"url": "transautomatism"
+  },
+  {
+	"name": "Sots Art",
+	"url": "sots-art"
+  },
+  {
+	"name": "Post-Painterly Abstraction",
+	"url": "post-painterly-abstraction?select=featured"
+  },
+  {
+	"name": "Severe Style",
+	"url": "severe-style"
+  },
+  {
+	"name": "Feminist Art",
+	"url": "feminist-art?select=featured"
+  },
+  {
+	"name": "Fiber art",
+	"url": "fiber-art"
+  },
+  {
+	"name": "Mail Art",
+	"url": "mail-art"
+  },
+  {
+	"name": "Outsider art",
+	"url": "outsider-art?select=featured"
+  },
+  {
+	"name": "Art Brut",
+	"url": "art-brut?select=featured"
+  },
+  {
+	"name": "Neo-Expressionism",
+	"url": "neo-expressionism?select=featured"
+  },
+  {
+	"name": "Neo-Dada",
+	"url": "neo-dada?select=featured"
+  },
+  {
+	"name": "Neo-Figurative Art",
+	"url": "neo-figurative-art"
+  },
+  {
+	"name": "Kinetic Art",
+	"url": "kinetic-art?select=featured"
+  },
+  {
+	"name": "Spatialism",
+	"url": "spatialism?select=featured"
+  },
+  {
+	"name": "Op Art",
+	"url": "op-art?select=featured"
+  },
+  {
+	"name": "Pop Art",
+	"url": "pop-art?select=featured"
+  },
+  {
+	"name": "Nouveau Réalisme",
+	"url": "nouveau-r-alisme?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Contemporary Art"
+  },
+  {
+	"name": "Conceptual Art",
+	"url": "conceptual-art?select=featured"
+  },
+  {
+	"name": "Minimalism",
+	"url": "minimalism?select=featured"
+  },
+  {
+	"name": "Post-Minimalism",
+	"url": "post-minimalism?select=featured"
+  },
+  {
+	"name": "Light and Space",
+	"url": "light-and-space?select=featured"
+  },
+  {
+	"name": "Environmental (Land) Art",
+	"url": "environmental-land-art"
+  },
+  {
+	"name": "Junk Art",
+	"url": "junk-art"
+  },
+  {
+	"name": "Cyber Art",
+	"url": "cyber-art"
+  },
+  {
+	"name": "Photorealism",
+	"url": "photorealism?select=featured"
+  },
+  {
+	"name": "Hyper-Realism",
+	"url": "hyper-realism?select=featured"
+  },
+  {
+	"name": "Poster Art Realism",
+	"url": "poster-art-realism"
+  },
+  {
+	"name": "Contemporary Realism",
+	"url": "contemporary-realism?select=featured"
+  },
+  {
+	"name": "P&amp;D (Pattern and Decoration)",
+	"url": "p-d-pattern-and-decoration?select=featured"
+  },
+  {
+	"name": "Transavantgarde",
+	"url": "transavantgarde?select=featured"
+  },
+  {
+	"name": "New European Painting",
+	"url": "new-european-painting?select=featured"
+  },
+  {
+	"name": "Neo-Pop Art",
+	"url": "neo-pop-art?select=featured"
+  },
+  {
+	"name": "Neo-Geo",
+	"url": "neo-geo?select=featured"
+  },
+  {
+	"name": "Maximalism",
+	"url": "maximalism"
+  },
+  {
+	"name": "Neo-Orthodoxism",
+	"url": "neo-orthodoxism"
+  },
+  {
+	"name": "Street art",
+	"url": "street-art?select=featured"
+  },
+  {
+	"name": "Lowbrow Art",
+	"url": "lowbrow-art"
+  },
+  {
+	"name": "Stuckism",
+	"url": "stuckism"
+  },
+  {
+	"name": "Toyism",
+	"url": "toyism"
+  },
+  {
+	"name": "New Casualism",
+	"url": "new-casualism"
+  },
+  {
+	"name": "Symbiotic Art",
+	"url": "symbiotic-art?select=featured"
+  },
+  {
+	"name": "Art Singulier",
+	"url": "art-singulier"
+  },
+  {
+	"name": "Superflat",
+	"url": "superflat"
+  },
+  {
+	"name": "Excessivism",
+	"url": "excessivism"
+  },
+  {
+	"name": "Digital Art",
+	"url": "digital-art"
+  },
+  {
+	"name": "Hyper-Mannerism (Anachronism)",
+	"url": "hyper-mannerism-anachronism"
+  },
+  {
+	"name": "Neo-Minimalism",
+	"url": "neo-minimalism?select=featured"
+  },
+  {
+	"name": "Fantasy Art",
+	"url": "fantasy-art"
+  },
+  {
+	"name": "Sky Art",
+	"url": "sky-art"
+  },
+  {
+	"name": "Contemporary",
+	"url": "contemporary"
+  },
+  {
+	"name": "",
+	"url": "Chinese Art"
+  },
+  {
+	"name": "Gongbi",
+	"url": "gongbi"
+  },
+  {
+	"name": "Ink and wash painting",
+	"url": "ink-and-wash-painting?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Korean Art"
+  },
+  {
+	"name": "Joseon Dynasty",
+	"url": "joseon-dynasty"
+  },
+  {
+	"name": "",
+	"url": "Japanese Art"
+  },
+  {
+	"name": "Shin-hanga",
+	"url": "shin-hanga?select=featured"
+  },
+  {
+	"name": "Sōsaku hanga",
+	"url": "s-saku-hanga?select=featured"
+  },
+  {
+	"name": "Sumi-e (Suiboku-ga)",
+	"url": "suiboku-ga-0"
+  },
+  {
+	"name": "Ukiyo-e",
+	"url": "ukiyo-e?select=featured"
+  },
+  {
+	"name": "Yamato-e",
+	"url": "yamato-e"
+  },
+  {
+	"name": "Kanō school style",
+	"url": "kano-school"
+  },
+  {
+	"name": "Nanga (Bunjinga)",
+	"url": "nanga-bunjinga"
+  },
+  {
+	"name": "Nihonga",
+	"url": "nihonga"
+  },
+  {
+	"name": "Zen",
+	"url": "zen?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Islamic Art"
+  },
+  {
+	"name": "Nas-Taliq",
+	"url": "nas-taliq"
+  },
+  {
+	"name": "Ilkhanid",
+	"url": "ilkhanid"
+  },
+  {
+	"name": "Timurid Period",
+	"url": "timurid-period"
+  },
+  {
+	"name": "Mughal",
+	"url": "mughal"
+  },
+  {
+	"name": "Ottoman Period",
+	"url": "ottoman-period"
+  },
+  {
+	"name": "Safavid Period",
+	"url": "safavid-period?select=featured"
+  },
+  {
+	"name": "",
+	"url": "Native Art"
+  },
+  {
+	"name": "Native Art",
+	"url": "native-art"
+  }
+]

@@ -1,0 +1,27 @@
+
+.main-image {
+	max-width: 100%;
+/ / min-height: 100 %;
+	height: auto;
+}
+
+.footer-label {
+	color: gray !important;
+	font-weight: lighter;
+	margin-left: 10px;
+	margin-right: 10px;
+/ / font-size: smaller !important;
+	vertical-align: bottom;
+}
+
+.footer-text {
+	vertical-align: bottom;
+}
+
+.toolbarTitleText {
+
+}
+
+.dividerTextIntroPage {
+	vertical-align: bottom;
+}
