@@ -45,16 +45,24 @@ User Story 1: see random paintings:
 User Story 2: change the painting style, that Bernanrd can see. 
 	Bernard wants to select the painting style in which he sees random paintings. He wants to select it from a list of different styles 
 
-## Lessons Learned
+### Lessons Learned
 - It gets difficult if you want to do something else than what is intended with the FIORI guidelines. You should really stay within the borders of the framework.
 
 ## Data model
 
+	- settings
+	- paintingHistory
+	- displayedImage
+	- pageNumberToLoad
+	- paintingStyles
+		- name
+		- divider
+		- url
+		- featured
 
 
 ## ToDos
-
-
+- rework data model + documentation
  - add button to load more pictures in the pool
  	- extend the model for the styles and store the data for each style
  	- like this we do not need to load already loaded data again
@@ -85,19 +93,22 @@ User Story 2: change the painting style, that Bernanrd can see.
  
  - add comments to code
 
- 
  - change console.log() to jQuery.sap.log.error( /.info(
  
  - crawl the API to be independent of API (also imgs)
 
 ### may be:
- -add favourite
- -have small pictures enlarged, like this: maximum width is 100%, but minimum height is 100%
- -is it possible to change the url #painting-style - for whichever category is selected?
- -define user stories
- bugs:
+ - add favourite functionality with which you can favourite your most liked pictures and store this in the local storage
+ - have small pictures enlarged, like this: maximum width is 100%, but minimum height is 100%
+ - is it possible to change the url #painting-style - for whichever category is selected?
+ - define user stories
+
+
+## Known bugs:
  - if you open a style through the fontpage the featured flag is not working
 
+
+### Notes
 You can choose any name for your namespace like "my.company.name". Since, I want all my paths to start where my index.html is, I used "./". You can always provide the reference path inplace of "./". Eg: "my.meta.models": "./models_folder/myTestmodel_folder" . This means when I say -> "my.meta.models.someResoucename" , UI5 will search in path-> "./models_folder/myTestmodel_folder/someResourceName".
 
 WikiArt API Writeup
