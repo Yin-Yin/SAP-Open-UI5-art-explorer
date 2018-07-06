@@ -1,8 +1,8 @@
 Explore art styles. 
 
-A demo app where you can explore paintings of different styles of art. The pictures come from WikiArt [a link](https://www.wikiart.org/). 
+A demo app where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
 
-DEMO (toDo: add lin to demo here once deployed)
+Demo available here: [artexplorer.netlify.com]https://artexplorer.netlify.com/ 
 
 You can also run the App locally and play around with it: 
 
