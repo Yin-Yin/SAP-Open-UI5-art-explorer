@@ -2,11 +2,11 @@ Explore art styles.
 
 A demo app where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
 
-Demo available here: [artexplorer.netlify.com]https://artexplorer.netlify.com/ 
+Demo available here: [artexplorer.netlify.com](https://artexplorer.netlify.com/). 
 
 You can also run the App locally and play around with it: 
 
-## Getting started
+## Run the App locally
 * Install Node.js (from [nodejs.org](http://nodejs.org/)).
 * Install the Grunt CLI
     ```sh
@@ -105,7 +105,8 @@ User Story 2: change the painting style, that Bernanrd can see.
 
 
 ## Known bugs:
- - if you open a style through the fontpage the featured flag is not working
+ - if you open a style through the frontpage the featured flag is not working
+ - 
 
 
 ### Notes
