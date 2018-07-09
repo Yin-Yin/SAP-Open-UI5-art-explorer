@@ -10,7 +10,7 @@
 	font-weight: lighter;
 	margin-left: 10px;
 	margin-right: 10px;
-/ / font-size: smaller !important;
+// font-size: smaller !important;
 	vertical-align: bottom;
 }
 
@@ -18,10 +18,19 @@
 	vertical-align: bottom;
 }
 
-.toolbarTitleText {
-
+.dividerTextIntroPage {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 15px;
+	vertical-align: center;
+	color: lightgrey;
 }
 
-.dividerTextIntroPage {
-	vertical-align: bottom;
+
+.modalListItemText {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 15px;
+	vertical-align: center;
+	color: #323232;
 }

@@ -20,12 +20,9 @@
 								  selected="true"
 								  select="changePaintingStyleComboBox"/>
 
-
 						<ToolbarSpacer/>
 
-
 						<Title text="{i18n>TITLE}" textAlign="center" level="H1"/>
-
 
 						<ToolbarSpacer/>
 						<Button id="showIntorPageButton" enabled="false" icon="sap-icon://sys-help"

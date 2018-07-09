@@ -10,7 +10,7 @@ sap.ui.define([
 
 	return Controller.extend('sap.ui.demo.todo.controller.App', {
 
-		featuredMap: new Map(), // toDono global variables in SAP UI 5 !
+		featuredMap: new Map(), // toDoo global variables in SAP UI 5?
 		stylesUrlArray: [],
 
 		onInit: function () {
@@ -54,7 +54,7 @@ sap.ui.define([
 					var text = new sap.m.Text(textId, {
 						textAlign: "Center",
 						wrapping: true,
-						text: buttonText
+						text: buttonText + ":"
 					});
 					text.addStyleClass("dividerTextIntroPage");
 					mainBox.addItem(text);
@@ -151,8 +151,6 @@ sap.ui.define([
 		},
 
 		triggerPaintingStyleDataLoad: function (paintingStyle, featured) {
-
-
 			var pageToLoad = this.getPageToLoad();
 			this.getPaintingDataForStylePaged(paintingStyle, featured, pageToLoad)
 			//this.getPaintingDataForStyle(paintingStyle, featured)
@@ -363,6 +361,7 @@ sap.ui.define([
 				var customListItem = new sap.m.CustomListItem();
 				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
 				var text = new sap.m.Text({text: paintingFromHistory.artistName + " - " + paintingFromHistory.title});
+				text.addStyleClass("modalListItemText");
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",
@@ -389,6 +388,7 @@ sap.ui.define([
 				var customListItem = new sap.m.CustomListItem();
 				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
 				var text = new sap.m.Text({text: countHistory + ". " + paintingFromHistory.artistName + " - " + paintingFromHistory.title});
+				text.addStyleClass("modalListItemText");
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",

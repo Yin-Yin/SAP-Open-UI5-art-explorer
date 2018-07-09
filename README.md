@@ -40,13 +40,16 @@ Run `grunt build` to build a deployable version of your app to `/dist`.
 		
 ## User stories: 
 Bernard the art lover wants to explore some art. 
-User Story 1: see random paintings: 
-	Bernard wants to open the app and immediately see some random paintings. He wants to change to another random image. 
-User Story 2: change the painting style, that Bernanrd can see. 
+
+##### User Story 1: see random paintings: 
+	Bernard wants to open the app and immediately see some random paintings. He wants to change to another random image.
+	
+##### User Story 2: change the painting style, that Bernard can see. 
 	Bernard wants to select the painting style in which he sees random paintings. He wants to select it from a list of different styles 
 
 ### Lessons Learned
 - It gets difficult if you want to do something else than what is intended with the FIORI guidelines. You should really stay within the borders of the framework.
+- UX is tough 
 
 ## Data model
 
@@ -59,6 +62,11 @@ User Story 2: change the painting style, that Bernanrd can see.
 		- divider
 		- url
 		- featured
+
+
+## Known bugs:
+ - If you open a style through the frontpage the featured flag is not working.
+ - Sometimes a picture is loaded twice. It looks as like nothing has happened.
 
 
 ## ToDos
@@ -102,11 +110,6 @@ User Story 2: change the painting style, that Bernanrd can see.
  - have small pictures enlarged, like this: maximum width is 100%, but minimum height is 100%
  - is it possible to change the url #painting-style - for whichever category is selected?
  - define user stories
-
-
-## Known bugs:
- - if you open a style through the frontpage the featured flag is not working
- - 
 
 
 ### Notes
