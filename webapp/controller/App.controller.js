@@ -361,13 +361,14 @@ sap.ui.define([
 				var customListItem = new sap.m.CustomListItem();
 				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
 				var text = new sap.m.Text({text: paintingFromHistory.artistName + " - " + paintingFromHistory.title});
-				text.addStyleClass("modalListItemText");
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",
 					press: [this.setMainImgFromImgOverview, this] // add to history here
 				});
+				text.addStyleClass("modalListItemText");
 				button.data("imgData", paintingFromHistory);
+				button.addStyleClass("modalListButtons");
 				//console.log(button.data("imgData"));
 				box.addItem(text);
 				box.addItem(button);
@@ -388,14 +389,15 @@ sap.ui.define([
 				var customListItem = new sap.m.CustomListItem();
 				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
 				var text = new sap.m.Text({text: countHistory + ". " + paintingFromHistory.artistName + " - " + paintingFromHistory.title});
-				text.addStyleClass("modalListItemText");
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",
 					press: [this.setMainImgFromHistory, this]
 				});
+				text.addStyleClass("modalListItemText");
 				button.data("imgData", paintingFromHistory);
 				// console.log(button.data("imgData"));
+				button.addStyleClass("modalListButtons");
 				box.addItem(text);
 				box.addItem(button);
 				customListItem.addContent(box);
