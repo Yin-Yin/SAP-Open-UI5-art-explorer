@@ -41,14 +41,16 @@
 }
 
 .introTitle {
-	margin: 30px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 .introText {
-	margin: 30px;
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
 .introButton {
-	margin: 30px;
-	
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
