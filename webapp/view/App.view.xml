@@ -51,7 +51,10 @@
 							visible="true">
 						<items>
 							<Title class="introTitle" level="H2" text="Welcome to Art Explorer - a demo SAP UI5 App - discover new artworks and paining-styles"/>
-							<Text class="introText" text="This App is made to explore and discover new paintings and painting styles. It shows pictures from Wikiart. The emphasis lies on discovering new art. \n There are two random buttons. At first you can select a painting style from below or may be discover something new by clicking the 'random painting style button'. \n You can see which paintings you have already watched in the history overview. \nThe App shows random images from the 'pool'. Open the pool to see from which selection the App fetches its random pictures. You can also directly select an artwork here.to view it. \n Toggle the 'featured' box to view only artwork from the selected painting style that are worth noticing. "/>
+							<Text class="introText" text="This App is made to explore and discover new paintings and painting styles. It shows pictures from Wikiart. The emphasis lies on discovering new art."/>
+							<Text class="introText" text="There are two random buttons. At first you can select a painting style from below or may be discover something new by clicking the 'random painting style button'. "/>
+							<Text class="introText" text="You can see which paintings you have already watched in the history overview. The App shows random images from the 'pool'. Open the pool to see from which selection the App fetches its random pictures. You can also directly select an artwork here.to view it."/>
+							<Text class="introText" text="Toggle the 'featured' box to view only artwork from the selected painting style that are worth noticing. "/>
 							<Button class="introButton" text="Start with random style" press="pressStartButtonRandom" type="Emphasized"/>
 							<FlexBox renderType="Div" wrap="Wrap" id="buttonBox" class="buttonBox"/>
 

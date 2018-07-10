@@ -18,8 +18,8 @@
 }
 
 .dividerTextIntroPage {
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-left: 12px;
+	margin-right: 12px;
 	margin-top: 15px;
 	vertical-align: middle;
 	color: lightgrey;
@@ -37,7 +37,6 @@
 .modalListButtons {
 	margin-left: 10px;
 	margin-right: 10px;
-	color: red;
 }
 
 .introTitle {
