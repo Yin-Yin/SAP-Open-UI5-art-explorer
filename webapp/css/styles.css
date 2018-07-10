@@ -1,7 +1,7 @@
 
 .main-image {
 	max-width: 100%;
-/ / min-height: 100 %;
+	min-height: 100%;
 	height: auto;
 }
 
@@ -10,7 +10,6 @@
 	font-weight: lighter;
 	margin-left: 10px;
 	margin-right: 10px;
-// font-size: smaller !important;
 	vertical-align: bottom;
 }
 
@@ -22,7 +21,7 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-top: 15px;
-	vertical-align: center;
+	vertical-align: middle;
 	color: lightgrey;
 }
 
@@ -31,6 +30,25 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-top: 15px;
-	vertical-align: center;
+	vertical-align: middle;
 	color: #323232;
+}
+
+.modalListButtons {
+	margin-left: 10px;
+	margin-right: 10px;
+	color: red;
+}
+
+.introTitle {
+	margin: 30px;
+}
+
+.introText {
+	margin: 30px;
+}
+
+.introButton {
+	margin: 30px;
+	
 }
