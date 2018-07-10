@@ -25,7 +25,7 @@ sap.ui.define([
 
 		},
 
-		onBeforeRendering: function () {
+		onAfterRendering: function () {
 			this.initButtonsOnMainTextPage();
 		},
 
