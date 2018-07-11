@@ -21,6 +21,8 @@ sap.ui.define([
 			console.log("model: ", this.getView().getModel());
 			
 			console.log("oModel: ", oModel);
+			
+			console.log("oModel.getData(): ", oModel.getData());
 			this.stylesUrlArray = this.initStylesUrlArray(oModel);
 			this.initPaintingStyleComboBox(oModel);
 			this.featuredMap = this.initFeaturedMap(oModel);
