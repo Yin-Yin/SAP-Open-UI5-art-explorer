@@ -112,10 +112,11 @@ sap.ui.define([
 
 		initStylesUrlArray: function (oModel) {
 			var stylesUrlArray = [];
-			var paintingStyles = oModel.oData.paintingStyles;
+			var oData = oModel.getData();
+			var paintingStyles = oData.paintingStyles;
 			console.log("initStylesUrlArray paintingStyles", paintingStyles);
-			console.log("initStylesUrlArray oData", this.getView().getModel().oData);
-			console.log("initStylesUrlArray getData", this.getView().getModel().getData());
+			console.log("initStylesUrlArray oData", oData);
+			console.log("initStylesUrlArray getData", oModel.getData());
 			console.log("initStylesUrlArray Model", this.getView().getModel());
 
 			for (var i = 0; i < paintingStyles.length; i++) {
