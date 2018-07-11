@@ -15,12 +15,13 @@ sap.ui.define([
 
 		onInit: function () {
 			
-			i18n = this.getView().getModel("i18n").getResourceBundle();
+			var oModel = this.getOwnerComponent().getModel();
+			i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
 			console.log("onInit, i18n: ", this.i18n);
 			console.log("model: ", this.getView().getModel());
-			this.stylesUrlArray = this.initStylesUrlArray();
-			this.initPaintingStyleComboBox();
-			this.featuredMap = this.initFeaturedMap();
+			this.stylesUrlArray = this.initStylesUrlArray(oModel);
+			this.initPaintingStyleComboBox(oModel);
+			this.featuredMap = this.initFeaturedMap(oModel);
 
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
@@ -66,11 +67,10 @@ sap.ui.define([
 			}
 		},
 
-		initPaintingStyleComboBox: function () {
+		initPaintingStyleComboBox: function (oModel) {
 			// console.log("init comboBox");
 
 			var comboBox = this.byId("comboBoxPaintingStyle");
-			var oModel = this.getView().getModel();
 			var paintingStyles = oModel.oData.paintingStyles;
 
 			var comboBoxToolTipText = i18n.getText("COMBOBOX_TOOLTIP");
@@ -93,9 +93,9 @@ sap.ui.define([
 			}
 		},
 
-		initFeaturedMap: function () {
+		initFeaturedMap: function (oModel) {
 			var featuredMap = new Map();
-			var paintingStyles = this.getView().getModel().oData.paintingStyles;
+			var paintingStyles = oModel.oData.paintingStyles;
 
 			for (var i = 0; i < paintingStyles.length; i++) {
 				var style = paintingStyles[i];
@@ -110,9 +110,9 @@ sap.ui.define([
 			return featuredMap;
 		},
 
-		initStylesUrlArray: function () {
+		initStylesUrlArray: function (oModel) {
 			var stylesUrlArray = [];
-			var paintingStyles = this.getView().getModel().oData.paintingStyles;
+			var paintingStyles = oModel.oData.paintingStyles;
 			console.log("initStylesUrlArray paintingStyles", paintingStyles);
 			console.log("initStylesUrlArray oData", this.getView().getModel().oData);
 			console.log("initStylesUrlArray getData", this.getView().getModel().getData());
