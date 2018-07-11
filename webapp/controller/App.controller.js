@@ -17,6 +17,7 @@ sap.ui.define([
 			
 			i18n = this.getView().getModel("i18n").getResourceBundle();
 			console.log("onInit, i18n: ", this.i18n);
+			console.log("model: ", this.getView().getModel());
 			this.stylesUrlArray = this.initStylesUrlArray();
 			this.initPaintingStyleComboBox();
 			this.featuredMap = this.initFeaturedMap();
