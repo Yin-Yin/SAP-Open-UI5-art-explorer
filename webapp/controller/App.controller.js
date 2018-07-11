@@ -25,8 +25,6 @@ sap.ui.define([
 			
 			console.log("oModel type: ", typeof oModel);
 			console.log("oModel.getData(): ", oModel.getData());
-			oModel.getData().then(console.log("finished"));
-			
 			console.log("oModel.oData: ", oModel.oData);
 			this.stylesUrlArray = this.initStylesUrlArray(oModel);
 			this.initPaintingStyleComboBox(oModel);
