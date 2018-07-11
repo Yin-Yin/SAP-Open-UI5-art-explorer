@@ -69,7 +69,8 @@ sap.ui.define([
 			var oModel = this.getView().getModel();
 			var paintingStyles = oModel.oData.paintingStyles;
 
-			comboBox.setTooltip("Select a painting style");
+			var comboBoxToolTipText = i18n.getText("COMBOBOX_TOOLTIP");
+			comboBox.setTooltip(comboBoxToolTipText);
 			//comboBox.setValue("Socialist Realism");
 
 			for (var i = 0; i < paintingStyles.length; i++) {
@@ -198,9 +199,9 @@ sap.ui.define([
 			}
 
 			console.log("pageToLoad getPaintingDataForStylePaged", pageToLoad);
-			pageString = "";
+			var pageString = "";
 			if (pageToLoad) {
-				var pageString = "&page=", pageToLoad;
+				pageString = "&page=" + pageToLoad;
 				console.log("pageToLoad", pageToLoad);
 				console.log("pageString", pageString);
 			}
@@ -245,10 +246,11 @@ sap.ui.define([
 			busyDialog.close();
 		},
 
-		showErrorDialog: function (errorText) { //toDo: add this dinamically to error callback of ajax call
+		showErrorDialog: function (errorText) { //toDo: add this dynamically to error callback of ajax call
 			var okButtonText = i18n.getText("DIALOG_BUTTON_OK");
+			var errorTitleText = i18n.getText("ERROR_TITLE");
 			var dialog = new sap.m.Dialog("errorDialog", {
-				title: 'Error',
+				title: errorTitleText,
 				type: 'Message',
 				state: 'Error',
 				content: new sap.m.Text({
@@ -263,7 +265,7 @@ sap.ui.define([
 				afterClose: function () {
 					dialog.destroy();
 				}
-			}); // toDo: put in i18n
+			}); // toDo:'put in i18n'
 			dialog.open();
 		},
 
@@ -314,16 +316,17 @@ sap.ui.define([
 			var paintingDataCurrentStyle = this.getView().getModel().oData.paintingDataCurrentStyle;
 			var picAmount = paintingDataCurrentStyle.Paintings.length;
 			var picAmountTotal = paintingDataCurrentStyle.AllPaintingsCount;
-			var dialogTitleString_1 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_1");
-			var dialogTitleString_2 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_2");
-			var dialogTitleString_3 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_3");
-			var dialogTitleString = dialogTitleString_1 + " " + picAmount + " " + dialogTitleString_2 + " " + picAmountTotal + " " + dialogTitleString_3; // this can be done properly!
+			var dialogTitleString1 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_1");
+			var dialogTitleString2 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_2");
+			var dialogTitleString3 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_3");
+			var dialogTitleString = dialogTitleString1 + " " + picAmount + " " + dialogTitleString2 + " " + picAmountTotal + " " + dialogTitleString3; // this can be done properly!
 			var loadMoreButton = new sap.m.Button({
 				text: "Load More",
 				type: "Emphasized",
 				press: [this.getPaintingDataForStylePaged, this]
 			});
 			var content = new sap.m.List({items: this.fillImgOverviewItemsArray()});
+			content.addItem(loadMoreButton);
 			// make code smaller, put this somewhere else!!!!!!!!!!!
 			this.showContentDialog(dialogTitleString, content);
 
