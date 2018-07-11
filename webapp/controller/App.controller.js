@@ -15,6 +15,11 @@ sap.ui.define([
 
 		onInit: function () {
 			
+			i18n = this.getView().getModel("i18n").getResourceBundle();
+			console.log("onInit, i18n: ", this.i18n);
+			this.stylesUrlArray = this.initStylesUrlArray();
+			this.initPaintingStyleComboBox();
+			this.featuredMap = this.initFeaturedMap();
 
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
@@ -23,12 +28,8 @@ sap.ui.define([
 		},
 
 		onBeforeRendering: function () {
+			console.log("onBeforeRendering, i18n: ", this.i18n);
 			this.initButtonsOnMainTextPage();
-			
-			this.featuredMap = this.initFeaturedMap();
-			this.stylesUrlArray = this.initStylesUrlArray();
-			this.initPaintingStyleComboBox();
-			i18n = this.getView().getModel("i18n").getResourceBundle();
 		},
 
 		initButtonsOnMainTextPage: function () {
