@@ -15,6 +15,13 @@ sap.ui.define([
 
 		onInit: function () {
 			
+
+		},
+
+		onBeforeRendering: function () {
+		},
+		onAfterRendering: function() {
+			
 			var oModel = this.getOwnerComponent().getModel();
 			i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
 			console.log("onInit, i18n: ", this.i18n);
@@ -33,10 +40,6 @@ sap.ui.define([
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
 			//this.changeToRandomPicture();
-
-		},
-
-		onBeforeRendering: function () {
 			console.log("onBeforeRendering, i18n: ", this.i18n);
 			this.initButtonsOnMainTextPage();
 		},
