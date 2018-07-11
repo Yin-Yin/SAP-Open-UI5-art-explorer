@@ -14,10 +14,7 @@ sap.ui.define([
 		stylesUrlArray: [],
 
 		onInit: function () {
-			this.featuredMap = this.initFeaturedMap();
-			this.stylesUrlArray = this.initStylesUrlArray();
-			this.initPaintingStyleComboBox();
-			i18n = this.getView().getModel("i18n").getResourceBundle();
+			
 
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
@@ -27,6 +24,11 @@ sap.ui.define([
 
 		onBeforeRendering: function () {
 			this.initButtonsOnMainTextPage();
+			
+			this.featuredMap = this.initFeaturedMap();
+			this.stylesUrlArray = this.initStylesUrlArray();
+			this.initPaintingStyleComboBox();
+			i18n = this.getView().getModel("i18n").getResourceBundle();
 		},
 
 		initButtonsOnMainTextPage: function () {
