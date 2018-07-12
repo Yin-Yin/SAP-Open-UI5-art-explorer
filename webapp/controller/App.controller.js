@@ -28,7 +28,7 @@ sap.ui.define([
 				
 			  var that = this;
 
-  oModel.getData().loaded().then(function() {
+  oModel.getMetaModel().loaded().then(function() {
      console.log("that.oModel", that.oModel);
      console.log("that.oModel.oData", that.oModel.oData);
      console.log("that.oModel.getData()", that.oModel.getData());
