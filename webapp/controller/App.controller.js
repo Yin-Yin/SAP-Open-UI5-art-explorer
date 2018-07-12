@@ -16,7 +16,7 @@ sap.ui.define([
 		onInit: function() {
 			var oModel = this.getView().getModel();
 
-			setTimeout(function() {
+			// setTimeout(function() {
 				i18n = this.getView().getModel("i18n").getResourceBundle();
 				console.log("onInit, i18n: ", this.i18n);
 				console.log("model: ", this.getView().getModel());
@@ -36,7 +36,7 @@ sap.ui.define([
 				//this.changeToRandomPicture();
 				console.log("onBeforeRendering, i18n: ", this.i18n);
 				this.initButtonsOnMainTextPage();
-			})
+			// })
 		},
 
 		onBeforeRendering: function() {},
