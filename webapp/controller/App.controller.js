@@ -17,7 +17,7 @@ sap.ui.define([
 			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
 			var oModel = this.getView().getModel();
 
-			setTimeout(function() {
+			// setTimeout(function() {
 				i18n = this.getView().getModel("i18n").getResourceBundle();
 				console.log("onInit, i18n: ", this.i18n);
 				console.log("model: ", this.getView().getModel());
@@ -36,17 +36,15 @@ sap.ui.define([
 				//this.loadPaintingStyleData("socialist-realism", true);
 				//this.changeToRandomPicture();
 				console.log("onBeforeRendering, i18n: ", this.i18n);
-				this.initButtonsOnMainTextPage();
-			}, 100)
+				
+			// }, 100)
 		},
 
-		onBeforeRendering: function() {},
-		onAfterRendering: function() {
-
-
-
+		onBeforeRendering: function() {
+			this.initButtonsOnMainTextPage();
 		},
-
+		onAfterRendering: function() {},
+		
 		initButtonsOnMainTextPage: function() {
 			// console.log("initButtonsOnMainTextPage");
 			var mainBox = this.byId("buttonBox");
