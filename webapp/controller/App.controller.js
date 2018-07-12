@@ -14,6 +14,7 @@ sap.ui.define([
 		stylesUrlArray: [],
 
 		onInit: function() {
+			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel());
 			var oModel = this.getView().getModel();
 
 			setTimeout(function() {
@@ -36,7 +37,7 @@ sap.ui.define([
 				//this.changeToRandomPicture();
 				console.log("onBeforeRendering, i18n: ", this.i18n);
 				this.initButtonsOnMainTextPage();
-			},0)
+			}, 100)
 		},
 
 		onBeforeRendering: function() {},
