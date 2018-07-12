@@ -21,8 +21,20 @@ sap.ui.define([
 		onBeforeRendering: function () {
 		},
 		onAfterRendering: function() {
+		
 			
 			var oModel = this.getOwnerComponent().getModel();
+			
+				
+			  var that = this;
+
+  oModel.getData().loaded().then(function() {
+     console.log("that.oModel", that.oModel);
+     console.log("that.oModel.oData", that.oModel.oData);
+     console.log("that.oModel.getData()", that.oModel.getData());
+    })
+
+			
 			i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
 			console.log("onInit, i18n: ", this.i18n);
 			console.log("model: ", this.getView().getModel());
