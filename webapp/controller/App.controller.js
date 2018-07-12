@@ -14,7 +14,7 @@ sap.ui.define([
 		stylesUrlArray: [],
 
 		onInit: function() {
-			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel());
+			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
 			var oModel = this.getView().getModel();
 
 			setTimeout(function() {
