@@ -3,7 +3,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-], function (Controller, JSONModel, Filter, FilterOperator) {
+], function(Controller, JSONModel, Filter, FilterOperator) {
 	'use strict';
 
 	var i18n;
@@ -13,45 +13,40 @@ sap.ui.define([
 		featuredMap: new Map(), // toDoo global variables in SAP UI 5?
 		stylesUrlArray: [],
 
-		onInit: function () {
-			
+		onInit: function() {
+			var oModel = this.getView().getModel();
 
-		},
-
-		onBeforeRendering: function () {
-		},
-		onAfterRendering: function() {
-		
-			
-			var oModel = this.getOwnerComponent().getModel();
-			
 			setTimeout(function() {
-				
-			
-			i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-			console.log("onInit, i18n: ", this.i18n);
-			console.log("model: ", this.getView().getModel());
-			
-			console.log("oModel: ", oModel);
-			
-			
-			console.log("oModel type: ", typeof oModel);
-			console.log("oModel.getData(): ", oModel.getData());
-			console.log("oModel.oData: ", oModel.oData);
-			this.stylesUrlArray = this.initStylesUrlArray(oModel);
-			this.initPaintingStyleComboBox(oModel);
-			this.featuredMap = this.initFeaturedMap(oModel);
+				i18n = this.getView().getModel("i18n").getResourceBundle();
+				console.log("onInit, i18n: ", this.i18n);
+				console.log("model: ", this.getView().getModel());
 
+				console.log("oModel: ", oModel);
+
+
+				console.log("oModel type: ", typeof oModel);
+				console.log("oModel.getData(): ", oModel.getData());
+				console.log("oModel.oData: ", oModel.oData);
+				this.stylesUrlArray = this.initStylesUrlArray(oModel);
+				this.initPaintingStyleComboBox(oModel);
+				this.featuredMap = this.initFeaturedMap(oModel);
+
+				// move to another function, call when button is triggered
+				//this.loadPaintingStyleData("socialist-realism", true);
+				//this.changeToRandomPicture();
+				console.log("onBeforeRendering, i18n: ", this.i18n);
+				this.initButtonsOnMainTextPage();
 			})
-
-			// move to another function, call when button is triggered
-			//this.loadPaintingStyleData("socialist-realism", true);
-			//this.changeToRandomPicture();
-			console.log("onBeforeRendering, i18n: ", this.i18n);
-			this.initButtonsOnMainTextPage();
 		},
 
-		initButtonsOnMainTextPage: function () {
+		onBeforeRendering: function() {},
+		onAfterRendering: function() {
+
+
+
+		},
+
+		initButtonsOnMainTextPage: function() {
 			// console.log("initButtonsOnMainTextPage");
 			var mainBox = this.byId("buttonBox");
 			var oModel = this.getView().getModel();
@@ -70,7 +65,8 @@ sap.ui.define([
 
 					//console.log("adding button: ", button);
 					mainBox.addItem(button);
-				} else {
+				}
+				else {
 					var buttonText = paintingStyles[i].name;
 					var textId = "OpeningTestDivider" + i;
 					var text = new sap.m.Text(textId, {
@@ -84,7 +80,7 @@ sap.ui.define([
 			}
 		},
 
-		initPaintingStyleComboBox: function (oModel) {
+		initPaintingStyleComboBox: function(oModel) {
 			// console.log("init comboBox");
 
 			var comboBox = this.byId("comboBoxPaintingStyle");
@@ -101,7 +97,8 @@ sap.ui.define([
 					listItem.setText("----" + currentStyle.name + "----");
 					listItem.setEnabled(false);
 					comboBox.addItem(listItem);
-				} else {
+				}
+				else {
 					var listItem = new sap.ui.core.ListItem(currentStyle.url);
 					listItem.setText(currentStyle.name);
 					listItem.setKey(currentStyle.url);
@@ -110,7 +107,7 @@ sap.ui.define([
 			}
 		},
 
-		initFeaturedMap: function (oModel) {
+		initFeaturedMap: function(oModel) {
 			var featuredMap = new Map();
 			var paintingStyles = oModel.oData.paintingStyles;
 
@@ -127,7 +124,7 @@ sap.ui.define([
 			return featuredMap;
 		},
 
-		initStylesUrlArray: function (oModel) {
+		initStylesUrlArray: function(oModel) {
 			var stylesUrlArray = [];
 			var oData = oModel.getData();
 			var paintingStyles = oData.paintingStyles;
@@ -145,7 +142,7 @@ sap.ui.define([
 			return stylesUrlArray;
 		},
 
-		changePaintingStyleComboBox: function () {
+		changePaintingStyleComboBox: function() {
 			var comboBox = this.byId("comboBoxPaintingStyle");
 			var changeToPaintingStyle = comboBox.getSelectedKey();
 			var featured = this.checkPaintingStyleIsFeatured(changeToPaintingStyle);
@@ -158,7 +155,7 @@ sap.ui.define([
 
 		},
 
-		checkPaintingStyleIsFeatured: function (changeToPaintingStyle) {
+		checkPaintingStyleIsFeatured: function(changeToPaintingStyle) {
 			var featured = false;
 			var featuredCheckBox = this.byId("featuredCheckBox");
 
@@ -166,18 +163,19 @@ sap.ui.define([
 				featured = featuredCheckBox.getSelected();
 				featuredCheckBox.setEnabled(true);
 				return featured;
-			} else {
+			}
+			else {
 				featuredCheckBox.setEnabled(false);
 				return featured;
 			}
 		},
 
-		getIsFeatured: function (changeToPaintingStyle) {
+		getIsFeatured: function(changeToPaintingStyle) {
 			var featuredValue = this.featuredMap.get(changeToPaintingStyle);
 			return featuredValue;
 		},
 
-		triggerPaintingStyleDataLoad: function (paintingStyle, featured) {
+		triggerPaintingStyleDataLoad: function(paintingStyle, featured) {
 			var pageToLoad = this.getPageToLoad();
 			this.getPaintingDataForStylePaged(paintingStyle, featured, pageToLoad)
 			//this.getPaintingDataForStyle(paintingStyle, featured)
@@ -185,7 +183,7 @@ sap.ui.define([
 			//.fail(this.errorHandlerPaintingStyleDataLoad);
 		},
 
-		getPaintingDataForStyle: function (paintingStyle, featured) {
+		getPaintingDataForStyle: function(paintingStyle, featured) {
 			var featuredString = "";
 			if (featured) {
 				featuredString = "select=featured&";
@@ -199,18 +197,19 @@ sap.ui.define([
 				type: 'GET',
 				context: this, // pass in controller context
 				async: true,
-				success: this.successHandlerPaintingStyleDataLoad,   // decide whether to have it here or add with .done/..
+				success: this.successHandlerPaintingStyleDataLoad, // decide whether to have it here or add with .done/..
 				error: this.errorHandlerPaintingStyleDataLoad
 			});
 		},
 
-		getPageToLoad: function () {
+		getPageToLoad: function() {
 			var oModel = this.getView().getModel();
 			var pageNumberToLoad = oModel.getProperty("/pageNumberToLoad");
 			console.log("pageNumberToLoad onStart ", pageNumberToLoad);
 			if (pageNumberToLoad === undefined) {
 				pageNumberToLoad = 1;
-			} else {
+			}
+			else {
 				pageNumberToLoad += 1;
 			}
 			oModel.setProperty("/pageNumberToLoad", pageNumberToLoad);
@@ -218,7 +217,7 @@ sap.ui.define([
 			return pageNumberToLoad;
 		},
 
-		getPaintingDataForStylePaged: function (paintingStyle, featured, pageToLoad) {
+		getPaintingDataForStylePaged: function(paintingStyle, featured, pageToLoad) {
 			var featuredString = "";
 			if (featured) {
 				featuredString = "select=featured&";
@@ -240,12 +239,12 @@ sap.ui.define([
 				type: 'GET',
 				context: this, // pass in controller context
 				async: true,
-				success: this.successHandlerPaintingStyleDataLoad,   // decide whether to have it here or add with .done/..
+				success: this.successHandlerPaintingStyleDataLoad, // decide whether to have it here or add with .done/..
 				error: this.errorHandlerPaintingStyleDataLoad
 			});
 		},
 
-		successHandlerPaintingStyleDataLoad: function (data) {
+		successHandlerPaintingStyleDataLoad: function(data) {
 			// jQuery.sap.log.info('Successfully retrieved data from APU');
 			var oModel = this.getView().getModel();
 			oModel.setProperty("/paintingDataCurrentStyle", data);
@@ -254,7 +253,7 @@ sap.ui.define([
 		},
 
 		// toDo: make general error handler function
-		errorHandlerPaintingStyleDataLoad: function (data) {
+		errorHandlerPaintingStyleDataLoad: function(data) {
 			console.log("error data: ", data);
 			jQuery.sap.log.error('Error on calling the API');
 			var errorText = i18n.getText("API_ERROR");
@@ -262,17 +261,17 @@ sap.ui.define([
 			this.closeBusyDialog();
 		},
 
-		openBusyDialog: function () {
+		openBusyDialog: function() {
 			var busyDialog = this.byId("BusyDialog");
 			busyDialog.open();
 		},
 
-		closeBusyDialog: function () {
+		closeBusyDialog: function() {
 			var busyDialog = this.byId("BusyDialog");
 			busyDialog.close();
 		},
 
-		showErrorDialog: function (errorText) { //toDo: add this dynamically to error callback of ajax call
+		showErrorDialog: function(errorText) { //toDo: add this dynamically to error callback of ajax call
 			var okButtonText = i18n.getText("DIALOG_BUTTON_OK");
 			var errorTitleText = i18n.getText("ERROR_TITLE");
 			var dialog = new sap.m.Dialog("errorDialog", {
@@ -284,11 +283,11 @@ sap.ui.define([
 				}),
 				beginButton: new sap.m.Button({
 					text: okButtonText,
-					press: function () {
+					press: function() {
 						dialog.close();
 					}
 				}),
-				afterClose: function () {
+				afterClose: function() {
 					dialog.destroy();
 				}
 			}); // toDo:'put in i18n'
@@ -298,7 +297,7 @@ sap.ui.define([
 		/**
 		 *
 		 */
-		changeToRandomPicture: function () { // put this all in one function, rename
+		changeToRandomPicture: function() { // put this all in one function, rename
 			var oData = this.getView().getModel().oData;
 			var randomEntry = this.getRandomEntry();
 
@@ -311,7 +310,7 @@ sap.ui.define([
 			// sap.m.MessageToast.show("Picture changed successfully", {duration: 1000, at: "right bottom"}); //toDo: add to i18n
 		},
 
-		setMainImage: function (paintingsDataObj) {
+		setMainImage: function(paintingsDataObj) {
 			// console.log("setMainImage", paintingsDataObj);
 			var pic = this.byId("mainPicture");
 			var paintingArtistText = this.byId("painting_artist");
@@ -325,7 +324,7 @@ sap.ui.define([
 			paintingYearText.setText(paintingsDataObj.year);
 		},
 
-		getRandomEntry: function () {
+		getRandomEntry: function() {
 			var oModel = this.getView().getModel();
 			console.log("oModel getRandomEntry", oModel);
 			console.log("picArray getRandomEntry", oModel.oData.paintingDataCurrentStyle.Paintings);
@@ -334,11 +333,11 @@ sap.ui.define([
 			return picArray[Math.floor(Math.random() * picArray.length)];
 		},
 
-		getRandomStyle: function () {
+		getRandomStyle: function() {
 			return this.stylesUrlArray[Math.floor(Math.random() * this.stylesUrlArray.length)];
 		},
 
-		openImgOverviewDialog: function () {
+		openImgOverviewDialog: function() {
 			var paintingDataCurrentStyle = this.getView().getModel().oData.paintingDataCurrentStyle;
 			var picAmount = paintingDataCurrentStyle.Paintings.length;
 			var picAmountTotal = paintingDataCurrentStyle.AllPaintingsCount;
@@ -351,20 +350,20 @@ sap.ui.define([
 				type: "Emphasized",
 				press: [this.getPaintingDataForStylePaged, this]
 			});
-			var content = new sap.m.List({items: this.fillImgOverviewItemsArray()});
+			var content = new sap.m.List({ items: this.fillImgOverviewItemsArray() });
 			content.addItem(loadMoreButton);
 			// make code smaller, put this somewhere else!!!!!!!!!!!
 			this.showContentDialog(dialogTitleString, content);
 
 		},
 
-		openHistoryDialog: function () {
+		openHistoryDialog: function() {
 			var dialogTitleString = i18n.getText("HISTORY_DIALOG_TITLE");
-			var content = new sap.m.List({items: this.fillHistoryListItemArray()});
+			var content = new sap.m.List({ items: this.fillHistoryListItemArray() });
 			this.showContentDialog(dialogTitleString, content);
 		},
 
-		showContentDialog: function (dialogTitleString, content) { // contentWidth: "40%", (?)
+		showContentDialog: function(dialogTitleString, content) { // contentWidth: "40%", (?)
 			var dialogButtonClose = i18n.getText("DIALOG_BUTTON_CLOSE");
 
 			var dialog = new sap.m.Dialog({
@@ -372,7 +371,7 @@ sap.ui.define([
 				content: content,
 				beginButton: new sap.m.Button({
 					text: dialogButtonClose,
-					press: function () {
+					press: function() {
 						dialog.close();
 					}.bind(this)
 				})
@@ -380,7 +379,7 @@ sap.ui.define([
 			dialog.open();
 		},
 
-		fillImgOverviewItemsArray: function () { // https://answers.sap.com/questions/204573/how-to-get-the-value-while-press-button-in-customl.html
+		fillImgOverviewItemsArray: function() { // https://answers.sap.com/questions/204573/how-to-get-the-value-while-press-button-in-customl.html
 			var viewButtonText = i18n.getText("BUTTON_VIEW");
 
 			var items = [];
@@ -388,8 +387,8 @@ sap.ui.define([
 			for (var i = 0; i < paintingsArray.length; i++) {
 				var paintingFromHistory = paintingsArray[i];
 				var customListItem = new sap.m.CustomListItem();
-				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
-				var text = new sap.m.Text({text: paintingFromHistory.artistName + " - " + paintingFromHistory.title});
+				var box = new sap.m.FlexBox({ alignItems: "Start", justifyContent: "SpaceBetween" });
+				var text = new sap.m.Text({ text: paintingFromHistory.artistName + " - " + paintingFromHistory.title });
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",
@@ -407,7 +406,7 @@ sap.ui.define([
 			return items;
 		},
 
-		fillHistoryListItemArray: function () { // https://answers.sap.com/questions/204573/how-to-get-the-value-while-press-button-in-customl.html
+		fillHistoryListItemArray: function() { // https://answers.sap.com/questions/204573/how-to-get-the-value-while-press-button-in-customl.html
 			var viewButtonText = i18n.getText("BUTTON_VIEW");
 
 			var items = [];
@@ -416,8 +415,8 @@ sap.ui.define([
 				var paintingFromHistory = paintingHistory[i];
 				var countHistory = i + 1;
 				var customListItem = new sap.m.CustomListItem();
-				var box = new sap.m.FlexBox({alignItems: "Start", justifyContent: "SpaceBetween"});
-				var text = new sap.m.Text({text: countHistory + ". " + paintingFromHistory.artistName + " - " + paintingFromHistory.title});
+				var box = new sap.m.FlexBox({ alignItems: "Start", justifyContent: "SpaceBetween" });
+				var text = new sap.m.Text({ text: countHistory + ". " + paintingFromHistory.artistName + " - " + paintingFromHistory.title });
 				var button = new sap.m.Button({
 					text: viewButtonText,
 					type: "Emphasized",
@@ -435,7 +434,7 @@ sap.ui.define([
 			return items;
 		},
 
-		setMainImgFromImgOverview: function (evt) {
+		setMainImgFromImgOverview: function(evt) {
 			// console.log("evt.getSource()", evt.getSource().data());
 			// console.log("imgData", imgData);
 
@@ -447,7 +446,7 @@ sap.ui.define([
 			oData.paintingHistory.push(imgData);
 		},
 
-		setMainImgFromHistory: function (evt) {
+		setMainImgFromHistory: function(evt) {
 			//console.log("evt.getSource()", evt.getSource().data());
 			//console.log("imgData", imgData);
 
@@ -458,17 +457,17 @@ sap.ui.define([
 			oData.displayedImage = imgData;
 		},
 
-		downloadImg: function () {
+		downloadImg: function() {
 			// console.log("displayedImage", displayedImage);
 			var displayedImage = this.getView().getModel().oData.displayedImage;
 			this.forceDownload(displayedImage.image, displayedImage.artistName + "_" + displayedImage.title + ".jpg");
 		},
 
-		forceDownload: function (url, fileName) { // https://stackoverflow.com/questions/17527713/force-browser-to-download-image-files-on-click    workaround on deprecated image downloading from Chrome
+		forceDownload: function(url, fileName) { // https://stackoverflow.com/questions/17527713/force-browser-to-download-image-files-on-click    workaround on deprecated image downloading from Chrome
 			var xhr = new XMLHttpRequest();
 			xhr.open("GET", url, true);
 			xhr.responseType = "blob";
-			xhr.onload = function () {
+			xhr.onload = function() {
 				var urlCreator = window.URL || window.webkitURL;
 				var imageUrl = urlCreator.createObjectURL(this.response);
 				var tag = document.createElement('a');
@@ -481,18 +480,18 @@ sap.ui.define([
 			xhr.send();
 		},
 
-		pressStartButtonRandom: function () {
+		pressStartButtonRandom: function() {
 			var randomStyle = this.getRandomStyle();
 			console.log("ranbdomStyle ", randomStyle);
 			this.pressStartButton(randomStyle);
 		},
 
-		pressStartButtonFromStyle: function (evt) {
+		pressStartButtonFromStyle: function(evt) {
 			var style = evt.getSource().data().styleData;
 			this.pressStartButton(style);
 		},
 
-		pressStartButton: function (style) {
+		pressStartButton: function(style) {
 			console.log("style ", style);
 			var featured = this.getIsFeatured(style);
 			var comboBox = this.byId("comboBoxPaintingStyle");
@@ -501,7 +500,7 @@ sap.ui.define([
 			comboBox.setValue(style); // set Name here
 		},
 
-		showContent: function () {
+		showContent: function() {
 			//btw: the whole toolbar can be enabled/disabled https://openui5.hana.ondemand.com/#/sample/sap.m.sample.ToolbarEnabled/preview
 			var flexBox = this.byId("mainFlexBox");
 			var messagePage = this.byId("mainFlexBoxIntro");
@@ -523,7 +522,7 @@ sap.ui.define([
 			footerToolbarImgInformation.setVisible(true);
 		},
 
-		showIntroPage: function () {
+		showIntroPage: function() {
 			//btw: the whole toolbar can be enabled/disabled https://openui5.hana.ondemand.com/#/sample/sap.m.sample.ToolbarEnabled/preview
 			var flexBox = this.byId("mainFlexBox");
 			var messagePage = this.byId("mainFlexBoxIntro");
