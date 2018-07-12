@@ -25,15 +25,8 @@ sap.ui.define([
 			
 			var oModel = this.getOwnerComponent().getModel();
 			
+			setTimeout(function() {
 				
-			  var that = this;
-
-  oModel.getMetaModel().loaded().then(function() {
-     console.log("that.oModel", that.oModel);
-     console.log("that.oModel.oData", that.oModel.oData);
-     console.log("that.oModel.getData()", that.oModel.getData());
-    })
-
 			
 			i18n = this.getOwnerComponent().getModel("i18n").getResourceBundle();
 			console.log("onInit, i18n: ", this.i18n);
@@ -48,6 +41,8 @@ sap.ui.define([
 			this.stylesUrlArray = this.initStylesUrlArray(oModel);
 			this.initPaintingStyleComboBox(oModel);
 			this.featuredMap = this.initFeaturedMap(oModel);
+
+			})
 
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
