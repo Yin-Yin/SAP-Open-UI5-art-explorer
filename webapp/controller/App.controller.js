@@ -1157,6 +1157,11 @@ sap.ui.define([
 			console.log("picArray getRandomEntry", oModel.oData.paintingDataCurrentStyle.Paintings);
 			var picArray = oModel.oData.paintingDataCurrentStyle.Paintings;
 
+			if (this.isArrayNull(picArray)) {
+				alert("It seems there are no entries for this art style. :(");
+				this.showIntroPage();
+				return
+			};
 			return picArray[Math.floor(Math.random() * picArray.length)];
 		},
 
@@ -1369,6 +1374,15 @@ sap.ui.define([
 			showHistoryButton.setEnabled(false);
 			showIntorPageButton.setEnabled(false);
 			footerToolbarImgInformation.setVisible(false);
+		},
+
+		isArrayNull: function(array) {
+			if (!Array.isArray(array) || !array.length) {
+				console.log("Array is empty!");
+				return true;
+			} else {
+				return false
+			}
 		},
 
 	});
