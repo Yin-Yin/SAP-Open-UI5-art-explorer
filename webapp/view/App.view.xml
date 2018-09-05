@@ -26,7 +26,7 @@
 
 						<ToolbarSpacer/>
 						<Button id="imgDownloadButton" press="downloadImg" icon="sap-icon://download"
-								tooltip="download image" enabled="false" text="{i18n>BUTTON_DOWNLOAD}"/>
+								tooltip="download image" enabled="false"/>
 						<Button id="showPoolButton" text="{i18n>BUTTON_OPEN_DIALOG_IMGOVERVIEW}"
 								press="openImgOverviewDialog" enabled="false"/>
 						<Button id="showHistoryButton" text="{i18n>BUTTON_OPEN_DIALOG_HISTORY}"
