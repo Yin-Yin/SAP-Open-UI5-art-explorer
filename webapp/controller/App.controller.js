@@ -1159,7 +1159,7 @@ sap.ui.define([
 
 			if (this.isArrayNull(picArray)) {
 				this.errorHandlerPaintingStyleDataLoad();
-				console.alert("It seems there are no entries for this art style. :(");
+				console.error("It seems there are no entries for this art style. :(");
 				this.showIntroPage();
 				return
 			};
