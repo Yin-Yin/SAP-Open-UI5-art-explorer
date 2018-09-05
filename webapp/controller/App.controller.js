@@ -1158,7 +1158,8 @@ sap.ui.define([
 			var picArray = oModel.oData.paintingDataCurrentStyle.Paintings;
 
 			if (this.isArrayNull(picArray)) {
-				alert("It seems there are no entries for this art style. :(");
+				this.errorHandlerPaintingStyleDataLoad();
+				console.alert("It seems there are no entries for this art style. :(");
 				this.showIntroPage();
 				return
 			};
