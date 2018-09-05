@@ -1342,7 +1342,7 @@ sap.ui.define([
 			var imgDownloadButton = this.byId("imgDownloadButton");
 			var showPoolButton = this.byId("showPoolButton");
 			var showHistoryButton = this.byId("showHistoryButton");
-			var showIntorPageButton = this.byId("showIntorPageButton");
+			//var showIntorPageButton = this.byId("showIntorPageButton");
 			var footerToolbarImgInformation = this.byId("imgInformation");
 			flexBox.setVisible(true);
 			messagePage.setVisible(false);
@@ -1351,7 +1351,7 @@ sap.ui.define([
 			imgDownloadButton.setEnabled(true);
 			showPoolButton.setEnabled(true);
 			showHistoryButton.setEnabled(true);
-			showIntorPageButton.setEnabled(true);
+			//showIntorPageButton.setEnabled(true);
 			footerToolbarImgInformation.setVisible(true);
 		},
 
@@ -1364,7 +1364,7 @@ sap.ui.define([
 			var imgDownloadButton = this.byId("imgDownloadButton");
 			var showPoolButton = this.byId("showPoolButton");
 			var showHistoryButton = this.byId("showHistoryButton");
-			var showIntorPageButton = this.byId("showIntorPageButton");
+			//var showIntorPageButton = this.byId("showIntorPageButton");
 			var footerToolbarImgInformation = this.byId("imgInformation");
 			flexBox.setVisible(false);
 			messagePage.setVisible(true);
@@ -1373,7 +1373,7 @@ sap.ui.define([
 			imgDownloadButton.setEnabled(false);
 			showPoolButton.setEnabled(false);
 			showHistoryButton.setEnabled(false);
-			showIntorPageButton.setEnabled(false);
+			//showIntorPageButton.setEnabled(false);
 			footerToolbarImgInformation.setVisible(false);
 		},
 
