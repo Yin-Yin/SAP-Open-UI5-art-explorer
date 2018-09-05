@@ -1158,10 +1158,13 @@ sap.ui.define([
 			var picArray = oModel.oData.paintingDataCurrentStyle.Paintings;
 
 			if (this.isArrayNull(picArray)) {
-				this.errorHandlerPaintingStyleDataLoad();
+				console.log("if (this.isArrayNull(picArray)) { picArray", picArray);
+				// this.errorHandlerPaintingStyleDataLoad(); // use this as an error handler?
+				alert("It seems there are no entries for this art style. :(");
 				console.error("It seems there are no entries for this art style. :(");
+				this.closeBusyDialog();
 				this.showIntroPage();
-				return
+				return // we need to end the function here right?
 			};
 			return picArray[Math.floor(Math.random() * picArray.length)];
 		},
