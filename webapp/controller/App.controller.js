@@ -1164,7 +1164,7 @@ sap.ui.define([
 				console.error("It seems there are no entries for this art style. :(");
 				this.closeBusyDialog();
 				this.showIntroPage();
-				return // we need to end the function here right?
+				// do we need to end the function here?
 			};
 			return picArray[Math.floor(Math.random() * picArray.length)];
 		},
