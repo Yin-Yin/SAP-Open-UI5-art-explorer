@@ -3,6 +3,7 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
+	"jquery.sap.global",
 ], function(Controller, JSONModel, Filter, FilterOperator) {
 	'use strict';
 
@@ -17,9 +18,7 @@ sap.ui.define([
 			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
 			//var oModel = this.getView().getModel();
 			var paintingModelData = this.getPaintingModel();
-			var oModel = new sap.ui.model.json.JSONModel({
-				paintingModelData
-			});
+			var oModel = new sap.ui.model.json.JSONModel(paintingModelData);
 			this.getView().setModel(oModel); // the model was not loading reliably, usually only after refreshing the page at least once 
 			// oModel.oData = this.getPaintingModel();
 					
@@ -30,7 +29,6 @@ sap.ui.define([
 			console.log("model: ", this.getView().getModel());
 
 			console.log("oModel: ", oModel);
-
 
 			console.log("JSON.stringify(oModel): ", JSON.stringify(oModel));
 			console.log("oModel type: ", typeof oModel);
