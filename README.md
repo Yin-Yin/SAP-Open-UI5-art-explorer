@@ -90,7 +90,7 @@ Bernard the art lover wants to explore some art.
         - tie the buttons to the loading of the page
  	
  - make one modal that caters the whole painting pool functions
- 	- move style button in there? (I mean comboBox
+ 	- move style comboBox in it?
  - display random style correctly	
 
  - fix css in paintings pool modal

@@ -184,7 +184,7 @@ sap.ui.define([
 		},
 
 		triggerPaintingStyleDataLoad: function(paintingStyle, featured) {
-			// var pageToLoad = this.getPageToLoad();
+			// var pageToLoad = this.getPageToLoad(); //toDo: activate again, once it is more advanced
 			var pageToLoad = "";
 			this.getPaintingDataForStylePaged(paintingStyle, featured, pageToLoad)
 			//this.getPaintingDataForStyle(paintingStyle, featured)
