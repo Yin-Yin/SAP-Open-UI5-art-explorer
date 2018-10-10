@@ -15,7 +15,7 @@ sap.ui.define([
 		stylesUrlArray: [],
 
 		onInit: function() {
-			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
+			//console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
 			//var oModel = this.getView().getModel();
 			var paintingModelData = this.getPaintingModel();
 			var oModel = new sap.ui.model.json.JSONModel(paintingModelData);

@@ -67,6 +67,8 @@ Bernard the art lover wants to explore some art.
 ## Known bugs:
  - If you open a style through the frontpage the featured flag is not working.
  - Sometimes a picture is loaded twice. It looks as like nothing has happened. > It would be good to avoid this.
+ - Intro Page is scrolling down every time the site loads
+ - only the first 60 (?) images of one style is loaded (there needs to be a mechanism that loads more images)
 
 
 ## ToDos
