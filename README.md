@@ -66,22 +66,26 @@ Bernard the art lover wants to explore some art.
 
 ## Known bugs:
  - If you open a style through the frontpage the featured flag is not working.
- - Sometimes a picture is loaded twice. It looks as like nothing has happened.
+ - Sometimes a picture is loaded twice. It looks as like nothing has happened. > It would be good to avoid this.
 
 
 ## ToDos
 - rework data model + documentation
  - add button to load more pictures in the pool
  	- extend the model for the styles and store the data for each style
- 	- like this we do not need to load already loaded data again
- 	- romantic style
- 		- featured
- 		- all others
- 			- pages loaded x
- 	- check how many pages are loaded already
- 	- if it is maximum deactivate button
- 	- if not, load how many are laoded already +1
- 	- make a new method that loads the pages
+     	- like this we do not need to load already loaded data again
+     	- romantic style
+     		- featured
+     		- all others
+     			- pages loaded x
+     	- check how many pages are loaded already
+     	- if it is maximum deactivate button
+     	- if not, load how many are laoded already +1
+     	- make a new method that loads the pages
+    - other option to add buttons:
+        - add a number of buttons like [page 1], [page 2]
+        - depending on how many pictures there are divided by 60 (how many pictures are on one page)
+        - tie the buttons to the loading of the page
  	
  - make one modal that caters the whole painting pool functions
  	- move style button in there? (I mean comboBox
@@ -101,7 +105,7 @@ Bernard the art lover wants to explore some art.
  
  - add comments to code
 
- - change console.log() to jQuery.sap.log.error( /.info(
+ - change console.log() to jQuery.sap.log.error()/.info()/etc.
  
  - crawl the API to be independent of API (also imgs)
 
