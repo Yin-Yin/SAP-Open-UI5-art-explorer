@@ -16,15 +16,14 @@ sap.ui.define([
 
 		onInit: function() {
 			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
-			var oModel = this.getView().getModel();
-			//var paintingModelData = this.getPaintingModel();
-			//var oModel = new sap.ui.model.json.JSONModel(paintingModelData);
-			//this.getView().setModel(oModel); // the model was not loading reliably, usually only after refreshing the page at least once 
-			oModel.oData = this.getPaintingModel();
+			//var oModel = this.getView().getModel();
+			var paintingModelData = this.getPaintingModel();
+			var oModel = new sap.ui.model.json.JSONModel(paintingModelData);
+			this.getView().setModel(oModel); // the model was not loading reliably, usually only after refreshing the page at least once 
+			//oModel.oData = this.getPaintingModel();
 					
 			i18n = this.getView().getModel("i18n").getResourceBundle();
 			
-			jQuery.sap.log("Test");
 			console.log("onInit, i18n: ", this.i18n);
 			console.log("model: ", this.getView().getModel());
 
