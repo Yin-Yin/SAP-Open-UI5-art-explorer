@@ -16,6 +16,7 @@ sap.ui.define([
 		onInit: function() {
 			console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
 			var oModel = this.getView().getModel();
+			/*
 			oModel.oData = 
 					{
 						"settings": "",
@@ -839,8 +840,10 @@ sap.ui.define([
 						  }
 						]
 					};
-
+			*/
 			i18n = this.getView().getModel("i18n").getResourceBundle();
+			
+			jQuery.sap.log("Test");
 			console.log("onInit, i18n: ", this.i18n);
 			console.log("model: ", this.getView().getModel());
 
@@ -1154,8 +1157,8 @@ sap.ui.define([
 
 		getRandomEntry: function() {
 			var oModel = this.getView().getModel();
-			console.log("oModel getRandomEntry", oModel);
-			console.log("picArray getRandomEntry", oModel.oData.paintingDataCurrentStyle.Paintings);
+			// console.log("oModel getRandomEntry", oModel);
+			// console.log("picArray getRandomEntry", oModel.oData.paintingDataCurrentStyle.Paintings);
 			var picArray = oModel.oData.paintingDataCurrentStyle.Paintings;
 
 			if (this.isArrayNull(picArray)) {
@@ -1165,7 +1168,7 @@ sap.ui.define([
 				console.error("It seems there are no entries for this art style. :(");
 				this.closeBusyDialog();
 				this.showIntroPage();
-				// do we need to end the function here?
+				// do we need to end the function here? break;
 			};
 			return picArray[Math.floor(Math.random() * picArray.length)];
 		},
@@ -1175,24 +1178,14 @@ sap.ui.define([
 		},
 
 		openImgOverviewDialog: function() {
-			
 			var paintingDataCurrentStyle = this.getView().getModel().oData.paintingDataCurrentStyle;
 			var picAmount = paintingDataCurrentStyle.Paintings.length;
 			var picAmountTotal = paintingDataCurrentStyle.AllPaintingsCount;
 			var dialogTitleString1 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_1");
 			var dialogTitleString2 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_2");
 			var dialogTitleString3 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_3");
-			
-			/*
-			var loadMoreButton = new sap.m.Button({
-				text: "Load More",
-				type: "Emphasized",
-				press: [this.getPaintingDataForStylePaged, this]
-			});
-			*/
 			var dialogTitleString = dialogTitleString1 + " " + picAmount + " " + dialogTitleString2 + " " + picAmountTotal + " " + dialogTitleString3; // this can be done properly!
 			var content = new sap.m.List({ items: this.fillImgOverviewItemsArray() });
-			//content.addItem(loadMoreButton);
 			// make code smaller, put this somewhere else!!!!!!!!!!!
 			this.showContentDialog(dialogTitleString, content);
 
