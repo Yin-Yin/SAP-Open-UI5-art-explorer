@@ -25,9 +25,9 @@
 						<Title text="{i18n>TITLE}" textAlign="center" level="H1"/>
 
 						<ToolbarSpacer/>
-						<Button id="showIntroPage" press="showIntroPage" icon="sap-icon://nav-back"
+						<Button id="showIntorPageButton" press="showIntroPage" icon="sap-icon://nav-back"
 								tooltip="download image" enabled="false"/>
-						<Button id="imgDownloadButton" press="downloadImg" icon="sap-icon://download" text="{i18n>BUTTON_DOWNLOAD}"
+						<Button id="imgDownloadButton" press="downloadImg" icon="sap-icon://download"
 								tooltip="download image" enabled="false"/>
 						<Button id="showPoolButton" text="{i18n>BUTTON_OPEN_DIALOG_IMGOVERVIEW}"
 								press="openImgOverviewDialog" enabled="false"/>
