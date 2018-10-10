@@ -1175,20 +1175,24 @@ sap.ui.define([
 		},
 
 		openImgOverviewDialog: function() {
+			
 			var paintingDataCurrentStyle = this.getView().getModel().oData.paintingDataCurrentStyle;
 			var picAmount = paintingDataCurrentStyle.Paintings.length;
 			var picAmountTotal = paintingDataCurrentStyle.AllPaintingsCount;
 			var dialogTitleString1 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_1");
 			var dialogTitleString2 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_2");
 			var dialogTitleString3 = i18n.getText("IMGOVERVIEW_DIALOG_TITLE_IMG_OVERVIEW_3");
-			var dialogTitleString = dialogTitleString1 + " " + picAmount + " " + dialogTitleString2 + " " + picAmountTotal + " " + dialogTitleString3; // this can be done properly!
+			
+			/*
 			var loadMoreButton = new sap.m.Button({
 				text: "Load More",
 				type: "Emphasized",
 				press: [this.getPaintingDataForStylePaged, this]
 			});
+			*/
+			var dialogTitleString = dialogTitleString1 + " " + picAmount + " " + dialogTitleString2 + " " + picAmountTotal + " " + dialogTitleString3; // this can be done properly!
 			var content = new sap.m.List({ items: this.fillImgOverviewItemsArray() });
-			content.addItem(loadMoreButton);
+			//content.addItem(loadMoreButton);
 			// make code smaller, put this somewhere else!!!!!!!!!!!
 			this.showContentDialog(dialogTitleString, content);
 
