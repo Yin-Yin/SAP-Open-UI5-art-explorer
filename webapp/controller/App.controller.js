@@ -1005,6 +1005,7 @@ sap.ui.define([
 
 		triggerPaintingStyleDataLoad: function(paintingStyle, featured) {
 			// var pageToLoad = this.getPageToLoad();
+			var pageToLoad = "";
 			this.getPaintingDataForStylePaged(paintingStyle, featured, pageToLoad)
 			//this.getPaintingDataForStyle(paintingStyle, featured)
 			//.done(this.successHandlerPaintingStyleDataLoad)
