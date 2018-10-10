@@ -24,35 +24,33 @@ sap.ui.define([
 					
 			i18n = this.getView().getModel("i18n").getResourceBundle();
 			
-			console.log("onInit, i18n: ", this.i18n);
-			console.log("model: ", this.getView().getModel());
+			//console.log("onInit, i18n: ", this.i18n);
+			//console.log("model: ", this.getView().getModel());
 
-			console.log("oModel: ", oModel);
+			//console.log("oModel: ", oModel);
 
-			console.log("JSON.stringify(oModel): ", JSON.stringify(oModel));
-			console.log("oModel type: ", typeof oModel);
-			console.log("oModel.getData(): ", oModel.getData());
-			console.log("oModel.oData: ", oModel.oData);
-			console.log("initStylesUrlArray");
+			//console.log("JSON.stringify(oModel): ", JSON.stringify(oModel));
+			//console.log("oModel type: ", typeof oModel);
+			//console.log("oModel.getData(): ", oModel.getData());
+			//console.log("oModel.oData: ", oModel.oData);
+			//console.log("initStylesUrlArray");
 			this.stylesUrlArray = this.initStylesUrlArray(oModel);
-			console.log("initPaintingStyleComboBox");
+			//console.log("initPaintingStyleComboBox");
 			this.initPaintingStyleComboBox(oModel);
-			console.log("initFeaturedMap");
+			//console.log("initFeaturedMap");
 			this.featuredMap = this.initFeaturedMap(oModel);
 
 			// move to another function, call when button is triggered
 			//this.loadPaintingStyleData("socialist-realism", true);
 			//this.changeToRandomPicture();
-				
 		},
 
 		onBeforeRendering: function() {
 		},
 		
 		onAfterRendering: function() {
-			console.log("onAfterRendering, i18n: ", this.i18n);
+			//console.log("onAfterRendering, i18n: ", this.i18n);
 			this.initButtonsOnMainTextPage();
-			
 		},
 		
 		initButtonsOnMainTextPage: function() {
@@ -136,13 +134,13 @@ sap.ui.define([
 			var oModel2 = this.getView().getModel();
 			var oData = oModel2.oData;
 			var paintingStyles = oData.paintingStyles;
-			console.log("initStylesUrlArray paintingStyles", paintingStyles);
-			console.log("initStylesUrlArray oData", oData);
-			console.log("initStylesUrlArray getData", oModel.getData());
-			console.log("initStylesUrlArray oModel.bCache", oModel.bCache);
-			console.log("initStylesUrlArray oModel", oModel);
-			console.log("initStylesUrlArray oModel2", oModel2);
-			console.log("initStylesUrlArray Model", this.getView().getModel());
+			//console.log("initStylesUrlArray paintingStyles", paintingStyles);
+			//console.log("initStylesUrlArray oData", oData);
+			//console.log("initStylesUrlArray getData", oModel.getData());
+			//console.log("initStylesUrlArray oModel.bCache", oModel.bCache);
+			//console.log("initStylesUrlArray oModel", oModel);
+			//console.log("initStylesUrlArray oModel2", oModel2);
+			//console.log("initStylesUrlArray Model", this.getView().getModel());
 
 			for (var i = 0; i < paintingStyles.length; i++) {
 				var style = paintingStyles[i];
@@ -159,10 +157,10 @@ sap.ui.define([
 			var featured = this.checkPaintingStyleIsFeatured(changeToPaintingStyle);
 			this.triggerPaintingStyleDataLoad(changeToPaintingStyle, featured);
 
-			console.log("changeToPaintingStyle ", changeToPaintingStyle);
+			//console.log("changeToPaintingStyle ", changeToPaintingStyle);
 
 			var oModel = this.getView().getModel();
-			console.log("oModel.oData", oModel.oData);
+			//console.log("oModel.oData", oModel.oData);
 
 		},
 
@@ -216,14 +214,14 @@ sap.ui.define([
 		getPageToLoad: function() {
 			var oModel = this.getView().getModel();
 			var pageNumberToLoad = oModel.getProperty("/pageNumberToLoad");
-			console.log("pageNumberToLoad onStart ", pageNumberToLoad);
+			//console.log("pageNumberToLoad onStart ", pageNumberToLoad);
 			if (pageNumberToLoad === undefined) {
 				pageNumberToLoad = 1;
 			} else {
 				pageNumberToLoad += 1;
 			}
 			oModel.setProperty("/pageNumberToLoad", pageNumberToLoad);
-			console.log("pageNumberToLoad ", pageNumberToLoad);
+			//console.log("pageNumberToLoad ", pageNumberToLoad);
 			return pageNumberToLoad;
 		},
 
@@ -233,7 +231,7 @@ sap.ui.define([
 				featuredString = "select=featured&";
 			}
 
-			console.log("pageToLoad getPaintingDataForStylePaged", pageToLoad);
+			//console.log("pageToLoad getPaintingDataForStylePaged", pageToLoad);
 			var pageString = "";
 			if (pageToLoad) {
 				pageString = "&page=" + pageToLoad;
@@ -264,7 +262,7 @@ sap.ui.define([
 
 		// toDo: make general error handler function
 		errorHandlerPaintingStyleDataLoad: function(data) {
-			console.log("error data: ", data);
+			//console.log("error data: ", data);
 			jQuery.sap.log.error('Error on calling the API');
 			var errorText = i18n.getText("API_ERROR");
 			this.showErrorDialog(errorText);
