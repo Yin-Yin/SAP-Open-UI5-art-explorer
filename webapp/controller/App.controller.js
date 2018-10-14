@@ -454,7 +454,7 @@ sap.ui.define([
 			this.setMainImage(imgData);
 			oData.displayedImage = imgData;
 			oData.paintingHistory.push(imgData);
-			console.log("evt.getSource() to .close();", evt.getSource());
+			console.log("evt.getSource() to .close();", evt.getSource().getParent().getParent().getParent());
 			// close modal again here
 		},
 
