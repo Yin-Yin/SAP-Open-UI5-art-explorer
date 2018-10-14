@@ -71,8 +71,7 @@ sap.ui.define([
 
 					//console.log("adding button: ", button);
 					mainBox.addItem(button);
-				}
-				else {
+				} 	else {
 					var buttonText = paintingStyles[i].name;
 					var textId = "OpeningTestDivider" + i;
 					var text = new sap.m.Text(textId, {
@@ -103,8 +102,7 @@ sap.ui.define([
 					listItem.setText("----" + currentStyle.name + "----");
 					listItem.setEnabled(false);
 					comboBox.addItem(listItem);
-				}
-				else {
+				} else {
 					var listItem = new sap.ui.core.ListItem(currentStyle.url);
 					listItem.setText(currentStyle.name);
 					listItem.setKey(currentStyle.url);
@@ -173,8 +171,7 @@ sap.ui.define([
 				featured = featuredCheckBox.getSelected();
 				featuredCheckBox.setEnabled(true);
 				return featured;
-			}
-			else {
+			} else {
 				featuredCheckBox.setEnabled(false);
 				return featured;
 			}
@@ -219,8 +216,7 @@ sap.ui.define([
 			//console.log("pageNumberToLoad onStart ", pageNumberToLoad);
 			if (pageNumberToLoad === undefined) {
 				pageNumberToLoad = 1;
-			}
-			else {
+			} else {
 				pageNumberToLoad += 1;
 			}
 			oModel.setProperty("/pageNumberToLoad", pageNumberToLoad);
@@ -458,6 +454,8 @@ sap.ui.define([
 			this.setMainImage(imgData);
 			oData.displayedImage = imgData;
 			oData.paintingHistory.push(imgData);
+			console.log("evt.getSource() to .close();", evt.getSource());
+			// close modal again here
 		},
 
 		setMainImgFromHistory: function(evt) {
@@ -469,6 +467,7 @@ sap.ui.define([
 
 			this.setMainImage(imgData);
 			oData.displayedImage = imgData;
+			// close modal again here
 		},
 
 		downloadImg: function() {
@@ -562,8 +561,7 @@ sap.ui.define([
 			if (!Array.isArray(array) || !array.length) {
 				console.log("Array is empty!");
 				return true;
-			}
-			else {
+			} else {
 				return false
 			}
 		},
