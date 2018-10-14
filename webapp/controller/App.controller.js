@@ -454,8 +454,8 @@ sap.ui.define([
 			this.setMainImage(imgData);
 			oData.displayedImage = imgData;
 			oData.paintingHistory.push(imgData);
-			console.log("evt.getSource() to .close();", evt.getSource().getParent().getParent().getParent());
-			// close modal again here
+			var dialog = evt.getSource().getParent().getParent().getParent().getParent();
+			dialog.close(); // close modal
 		},
 
 		setMainImgFromHistory: function(evt) {
@@ -467,7 +467,8 @@ sap.ui.define([
 
 			this.setMainImage(imgData);
 			oData.displayedImage = imgData;
-			// close modal again here
+			var dialog = evt.getSource().getParent().getParent().getParent().getParent();
+			dialog.close(); // close modal
 		},
 
 		downloadImg: function() {
