@@ -15,49 +15,36 @@ sap.ui.define([
 		stylesUrlArray: [],
 
 		onInit: function() {
-			//console.log("this.getOwnerComponent().getModel()", this.getOwnerComponent().getModel().oData);
-			//var oModel = this.getView().getModel();
 			var paintingModelData = this.getPaintingModel();
 			var oModel = new sap.ui.model.json.JSONModel(paintingModelData);
 			this.getView().setModel(oModel); // the model was not loading reliably, usually only after refreshing the page at least once 
-			//oModel.oData = this.getPaintingModel();
-
 			i18n = this.getView().getModel("i18n").getResourceBundle();
-
+			this.stylesUrlArray = this.initStylesUrlArray(oModel);
+			this.initPaintingStyleComboBox(oModel);
+			this.featuredMap = this.initFeaturedMap(oModel);
+			
+			
 			//console.log("onInit, i18n: ", this.i18n);
 			//console.log("model: ", this.getView().getModel());
-
 			//console.log("oModel: ", oModel);
-
 			//console.log("JSON.stringify(oModel): ", JSON.stringify(oModel));
 			//console.log("oModel type: ", typeof oModel);
 			//console.log("oModel.getData(): ", oModel.getData());
 			//console.log("oModel.oData: ", oModel.oData);
 			//console.log("initStylesUrlArray");
-			this.stylesUrlArray = this.initStylesUrlArray(oModel);
-			//console.log("initPaintingStyleComboBox");
-			this.initPaintingStyleComboBox(oModel);
-			//console.log("initFeaturedMap");
-			this.featuredMap = this.initFeaturedMap(oModel);
-
-			// move to another function, call when button is triggered
-			//this.loadPaintingStyleData("socialist-realism", true);
-			//this.changeToRandomPicture();
+			
 		},
 
 		onBeforeRendering: function() {},
 
 		onAfterRendering: function() {
-			//console.log("onAfterRendering, i18n: ", this.i18n);
 			this.initButtonsOnMainTextPage();
 		},
 
 		initButtonsOnMainTextPage: function() {
-			// console.log("initButtonsOnMainTextPage");
 			var mainBox = this.byId("buttonBox");
 			var oModel = this.getView().getModel();
 			var paintingStyles = oModel.oData.paintingStyles;
-			// console.log("painging style, ", paintingStyles);
 			for (var i = 0; i < paintingStyles.length; i++) {
 				if (paintingStyles[i].divider !== true) {
 					var buttonText = paintingStyles[i].name;
@@ -68,8 +55,6 @@ sap.ui.define([
 					});
 					button.setType("Transparent");
 					button.data("styleData", paintingStyles[i].url);
-
-					//console.log("adding button: ", button);
 					mainBox.addItem(button);
 				} 	else {
 					var buttonText = paintingStyles[i].name;
@@ -86,14 +71,11 @@ sap.ui.define([
 		},
 
 		initPaintingStyleComboBox: function(oModel) {
-			// console.log("init comboBox");
-
 			var comboBox = this.byId("comboBoxPaintingStyle");
 			var paintingStyles = oModel.oData.paintingStyles;
 
 			var comboBoxToolTipText = i18n.getText("COMBOBOX_TOOLTIP");
 			comboBox.setTooltip(comboBoxToolTipText);
-			//comboBox.setValue("Socialist Realism");
 
 			for (var i = 0; i < paintingStyles.length; i++) {
 				var currentStyle = paintingStyles[i];
@@ -117,14 +99,12 @@ sap.ui.define([
 
 			for (var i = 0; i < paintingStyles.length; i++) {
 				var style = paintingStyles[i];
-				//console.log("style", style);
 				var featured = false;
 				if (style.featured) {
 					featured = true;
 				}
 				featuredMap.set(style.url, featured)
 			}
-			// console.log("featuredMap", featuredMap);
 			return featuredMap;
 		},
 
@@ -133,14 +113,6 @@ sap.ui.define([
 			var oModel2 = this.getView().getModel();
 			var oData = oModel2.oData;
 			var paintingStyles = oData.paintingStyles;
-			//console.log("initStylesUrlArray paintingStyles", paintingStyles);
-			//console.log("initStylesUrlArray oData", oData);
-			//console.log("initStylesUrlArray getData", oModel.getData());
-			//console.log("initStylesUrlArray oModel.bCache", oModel.bCache);
-			//console.log("initStylesUrlArray oModel", oModel);
-			//console.log("initStylesUrlArray oModel2", oModel2);
-			//console.log("initStylesUrlArray Model", this.getView().getModel());
-
 			for (var i = 0; i < paintingStyles.length; i++) {
 				var style = paintingStyles[i];
 				if (!style.divider) {
@@ -155,12 +127,7 @@ sap.ui.define([
 			var changeToPaintingStyle = comboBox.getSelectedKey();
 			var featured = this.checkPaintingStyleIsFeatured(changeToPaintingStyle);
 			this.triggerPaintingStyleDataLoad(changeToPaintingStyle, featured);
-
-			//console.log("changeToPaintingStyle ", changeToPaintingStyle);
-
 			var oModel = this.getView().getModel();
-			//console.log("oModel.oData", oModel.oData);
-
 		},
 
 		checkPaintingStyleIsFeatured: function(changeToPaintingStyle) {
@@ -229,8 +196,6 @@ sap.ui.define([
 			if (featured) {
 				featuredString = "select=featured&";
 			}
-
-			//console.log("pageToLoad getPaintingDataForStylePaged", pageToLoad);
 			var pageString = "";
 			if (pageToLoad) {
 				pageString = "&page=" + pageToLoad;
@@ -252,7 +217,7 @@ sap.ui.define([
 		},
 
 		successHandlerPaintingStyleDataLoad: function(data) {
-			// jQuery.sap.log.info('Successfully retrieved data from APU');
+			// jQuery.sap.log.info('Successfully retrieved data from API');
 			var oModel = this.getView().getModel();
 			oModel.setProperty("/paintingDataCurrentStyle", data);
 			this.changeToRandomPicture();
@@ -261,7 +226,6 @@ sap.ui.define([
 
 		// toDo: make general error handler function
 		errorHandlerPaintingStyleDataLoad: function(data) {
-			//console.log("error data: ", data);
 			jQuery.sap.log.error('Error on calling the API');
 			var errorText = i18n.getText("API_ERROR");
 			this.showErrorDialog(errorText);
@@ -309,8 +273,7 @@ sap.ui.define([
 			var randomEntry = this.getRandomEntry();
 
 			this.setMainImage(randomEntry);
-			//console.log("oModel.oData.displayedImage", oData.displayedImage);
-
+			
 			oData.displayedImage = randomEntry;
 			oData.paintingHistory.push(randomEntry);
 
@@ -318,7 +281,6 @@ sap.ui.define([
 		},
 
 		setMainImage: function(paintingsDataObj) {
-			// console.log("setMainImage", paintingsDataObj);
 			var pic = this.byId("mainPicture");
 			var paintingArtistText = this.byId("painting_artist");
 			var paintingTitleText = this.byId("painting_title");
@@ -333,8 +295,6 @@ sap.ui.define([
 
 		getRandomEntry: function() {
 			var oModel = this.getView().getModel();
-			// console.log("oModel getRandomEntry", oModel);
-			// console.log("picArray getRandomEntry", oModel.oData.paintingDataCurrentStyle.Paintings);
 			var picArray = oModel.oData.paintingDataCurrentStyle.Paintings;
 
 			if (this.isArrayNull(picArray)) {
@@ -407,7 +367,6 @@ sap.ui.define([
 				text.addStyleClass("modalListItemText");
 				button.data("imgData", paintingFromHistory);
 				button.addStyleClass("modalListButtons");
-				//console.log(button.data("imgData"));
 				box.addItem(text);
 				box.addItem(button);
 				customListItem.addContent(box);
@@ -434,7 +393,6 @@ sap.ui.define([
 				});
 				text.addStyleClass("modalListItemText");
 				button.data("imgData", paintingFromHistory);
-				// console.log(button.data("imgData"));
 				button.addStyleClass("modalListButtons");
 				box.addItem(text);
 				box.addItem(button);
@@ -445,9 +403,6 @@ sap.ui.define([
 		},
 
 		setMainImgFromImgOverview: function(evt) {
-			// console.log("evt.getSource()", evt.getSource().data());
-			// console.log("imgData", imgData);
-
 			var imgData = evt.getSource().data().imgData;
 			var oData = this.getView().getModel().oData;
 
@@ -460,8 +415,7 @@ sap.ui.define([
 
 		setMainImgFromHistory: function(evt) {
 			//console.log("evt.getSource()", evt.getSource().data());
-			//console.log("imgData", imgData);
-
+			
 			var imgData = evt.getSource().data().imgData;
 			var oData = this.getView().getModel().oData;
 
@@ -472,7 +426,6 @@ sap.ui.define([
 		},
 
 		downloadImg: function() {
-			// console.log("displayedImage", displayedImage);
 			var displayedImage = this.getView().getModel().oData.displayedImage;
 			this.forceDownload(displayedImage.image, displayedImage.artistName + "_" + displayedImage.title + ".jpg");
 		},
@@ -567,7 +520,7 @@ sap.ui.define([
 			}
 		},
 
-		getPaintingModel: function() {
+		getPaintingModel: function() { // as the model was not loading reliably by itself, as a workaround the data is in this place now
 			var paingintModel = {
 				"settings": "",
 
