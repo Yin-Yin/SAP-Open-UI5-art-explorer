@@ -1,13 +1,13 @@
 # Art Explorer
-## Explore art styles. 
+- Explore art styles. 
 
-A demo app where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
+A demo of UI5 where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
 
-Find the App here: [artexplorer.netlify.com](https://artexplorer.netlify.com/). 
+Find the app here: [artexplorer.netlify.com](https://artexplorer.netlify.com/). 
 
-You can also run the App locally and play around with it: 
+You can also run the app locally and play around with it: 
 
-## Run the App locally
+## Run the app locally
 * Install Node.js (from [nodejs.org](http://nodejs.org/)).
 * Install the Grunt CLI
     ```sh
