@@ -1,6 +1,8 @@
 # Art Explorer
 - Explore art styles. 
 
+# *DEPRECATED*
+
 A demo of UI5 where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
 
 Find the app here: [artexplorer.netlify.com](https://artexplorer.netlify.com/). 
