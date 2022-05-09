@@ -1,7 +1,9 @@
 # Art Explorer
 - Explore art styles. 
 
-# *DEPRECATED*
+# _DEPRECATED_
+
+<img width="1533" alt="image" src="https://user-images.githubusercontent.com/13853689/167399631-ddaa3388-86b4-40de-a9ea-478463057d86.png">
 
 A demo of UI5 where you can explore paintings of different styles of art. The pictures come from [WikiArt](https://www.wikiart.org/). 
 
