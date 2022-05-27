@@ -1,7 +1,16 @@
 # Art Explorer
 - Explore art styles. 
 
+--------
+
 # _DEPRECATED_
+
+An experiment to explore the paintings and pictures of the wikiart website in a different way. You could choose a style and then explore the images of that category by pressing "random" and getting a random image. It was a nice way to explore the art styles, that I did not find on their website. 
+It was inspired by a twitter bot. 
+
+However due to a change in their api, it is not free anymore, at least not if it is not academically. And is a fun project academic? I guess in some way. Anyway the technology is also outdated by now and it is time to say goodbye. It was a nice idea and I found some great inspirational images through it. So, thanks for that, "art explorer". 
+
+----------
 
 <img width="1533" alt="image" src="https://user-images.githubusercontent.com/13853689/167399631-ddaa3388-86b4-40de-a9ea-478463057d86.png">
 
